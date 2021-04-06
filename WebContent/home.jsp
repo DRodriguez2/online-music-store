@@ -35,10 +35,10 @@
           <a class="nav-link" href="music.jsp">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="PH.html">Instruments</a>
+          <a class="nav-link" href="instruments.jsp">Instruments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="PH.html">Services</a>
+          <a class="nav-link" href="services.jsp">Services</a>
         </li>
       </ul>
     </div>
