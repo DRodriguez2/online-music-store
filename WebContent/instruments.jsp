@@ -52,7 +52,7 @@
   </nav>
   
   <form action="#">
-  	<input type="text" placeholder="Search.." name="search">
+  	<input type="text" placeholder="Search..." name="search">
   	<br><br>
   	<input type="submit" value="Submit">
    </form> 

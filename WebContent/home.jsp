@@ -44,6 +44,9 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
+  			<li class="nav-item active">
+      			<a class="nav-link" href="login.jsp">Login</a>
+    		</li>
     		<li class="nav-item active">
       			<a class="nav-link" href="cart.jsp">Cart</a>
     		</li>
