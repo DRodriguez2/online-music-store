@@ -54,7 +54,7 @@
   <form action="#">
   	<input type="text" placeholder="Search.." name="search">
   	<br><br>
-  	<input type="radio" id="title" name="title" value="title" style="margin-left: 5px">
+  	<input type="radio" id="title" name="title" value="title" style="margin-left: 5px" checked>
   		<label for="title">By Title</label>
   	<input type="radio" id="artist" name="artist" value="artist" style="margin-left: 5px">
   		<label for="artist">By Artist  </label>
