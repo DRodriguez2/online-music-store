@@ -6,35 +6,35 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.MusicStore.entities.*;
-import com.example.MusicStore.repository.*;
+import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.repository.*;
 
 
 @Service
 public class ServicesService {
 	
 	@Autowired
-	 private servicesRepository ServicesRepository;
+	 private ServiceRepository serviceRepository;
 	
 	
 
     public Iterable<Services> GetAllServices()
     {
-        return ServicesRepository.findAll();
+        return serviceRepository.findAll();
     }
 
 
     public Services GetServiceByName(String name) {
-    	Services foundUser = ServicesRepository.findByName(name);
+    	Services foundUser = serviceRepository.findByName(name);
         return foundUser;
     }
     
     public void DeleteServices(Services ServicestoUpdate) {
-    	ServicesRepository.delete(ServicestoUpdate);
+    	serviceRepository.delete(ServicestoUpdate);
     }
     
     public void UpdateServices(Services ServicestoUpdate) {
-    	ServicesRepository.save(ServicestoUpdate);
+    	serviceRepository.save(ServicestoUpdate);
     }
 
 

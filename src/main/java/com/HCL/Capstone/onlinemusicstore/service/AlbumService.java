@@ -3,18 +3,19 @@ package com.HCL.Capstone.onlinemusicstore.service;
 import java.util.Optional;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.MusicStore.entities.*;
-import com.example.MusicStore.repository.*;
+import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.repository.*;
 
 
 @Service
 public class AlbumService {
 	
 	@Autowired
-	 private albumRepository AlbumRepository;
+	 private AlbumRepository AlbumRepository;
 	
 	
 

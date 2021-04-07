@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.MusicStore.entities.*;
-import com.example.MusicStore.repository.*;
-import com.example.MusicStore.service.*;
+import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
+import com.HCL.Capstone.onlinemusicstore.service.*;
 
 import java.util.List;
 
@@ -56,7 +56,7 @@ public class searchController {
 			accessoryResults = accessoryService.GetAllAccessories();
 
 //Search instruments	
-		for(Instrument i: instrumentResults) {
+		for(Product i: instrumentResults) {
 			if(i.getName() == search) {
 				results.add(i);
 			}
@@ -96,7 +96,7 @@ public class searchController {
 			if(i.getName() == search) {
 				results.add(i);
 			}
-			if (i.getMaker() == search) {
+			if (i.getBrand() == search) {
 				results.add(i);
 			}
 		}
@@ -110,7 +110,7 @@ public class searchController {
 	
 	@RequestMapping(value = "/AdvSearch", method = RequestMethod.POST)
 	public String advanceSearchInventory(ModelMap model,@RequestParam String type,@RequestParam String search,
-			@RequestParam int priceLow, @RequestParam int priceHigh) {
+			@RequestParam Double priceLow, @RequestParam Double priceHigh) {
 		
 		List <Object> results = new ArrayList<Object>();
 		
