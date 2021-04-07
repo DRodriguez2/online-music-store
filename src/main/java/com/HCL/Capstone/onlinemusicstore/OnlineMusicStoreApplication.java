@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 import com.HCL.Capstone.onlinemusicstore.entity.Instrument;
 import com.HCL.Capstone.onlinemusicstore.entity.Product;
-import com.HCL.Capstone.onlinemusicstore.entity.Service;
+import com.HCL.Capstone.onlinemusicstore.entity.Services;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.repository.AccessoryRepository;
 import com.HCL.Capstone.onlinemusicstore.repository.InstrumentRepository;
@@ -36,7 +36,7 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 		
 		Instrument i1  = new Instrument("Fender Guitar", Category.INSTRUMENT, 299.00, "Percussion", "Fender");
 		
-		Service s1 = new Service("Service1", Category.SERVICE, 49.99, "Instrument Repair");
+		Services s1 = new Services("Service1", Category.SERVICE, 49.99, "Instrument Repair");
 		
 		Accessory a1 = new Accessory("Accessory1", Category.ACCESSORIES, 149.99, "Headphones", "Audio Technica");
 		
