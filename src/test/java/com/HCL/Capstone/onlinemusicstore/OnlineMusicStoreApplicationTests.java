@@ -28,7 +28,7 @@ class OnlineMusicStoreApplicationTests {
 	
 	@Test
 	@Transactional
-	public void retrieveStudentAndCourses() {
+	public void basicTesting() {
 		
 		Album album = new Album("Greatest Hits", Category.MUSIC, 9.99, Platform.DIGITAL, MusicType.ALBUM, "Guns n Roses", "Rock");
 		mr.save(album);

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -18,7 +19,7 @@ import lombok.Getter;
 @Getter
 public class Song extends Music{
 	
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="SONG_ALBUM", 
 	   joinColumns = @JoinColumn(name="SONG_ID"),
 	   inverseJoinColumns = @JoinColumn(name="ALBUM_ID")
