@@ -14,29 +14,29 @@ import com.HCL.Capstone.onlinemusicstore.repository.*;
 @Service
 public class AlbumService {
 	
-	@Autowired
-	 private AlbumRepository AlbumRepository;
-	
-	
-
-    public Iterable<Album> GetAllAlbums()
-    {
-        return AlbumRepository.findAll();
-    }
-
-
-    public Album GetAlbumByName(String name) {
-    	Album foundUser = AlbumRepository.findByName(name);
-        return foundUser;
-    }
-    
-    public void DeleteAlbum(Album AlbumtoUpdate) {
-    	AlbumRepository.delete(AlbumtoUpdate);
-    }
-    
-    public void UpdateAlbum(Album AlbumtoUpdate) {
-    	AlbumRepository.save(AlbumtoUpdate);
-    }
+//	@Autowired
+//	 private AlbumRepository AlbumRepository;
+//	
+//	
+//
+//    public Iterable<Album> GetAllAlbums()
+//    {
+//        return AlbumRepository.findAll();
+//    }
+//
+//
+//    public Album GetAlbumByName(String name) {
+//    	Album foundUser = AlbumRepository.findByName(name);
+//        return foundUser;
+//    }
+//    
+//    public void DeleteAlbum(Album AlbumtoUpdate) {
+//    	AlbumRepository.delete(AlbumtoUpdate);
+//    }
+//    
+//    public void UpdateAlbum(Album AlbumtoUpdate) {
+//    	AlbumRepository.save(AlbumtoUpdate);
+//    }
 
 
 }
