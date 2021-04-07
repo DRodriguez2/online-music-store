@@ -49,18 +49,18 @@ public class searchController {
 		Iterable<Services> serviceResults = new ArrayList<>();
 			serviceResults = servicesService.GetAllServices();
 		Iterable<Music> musicResults = new ArrayList<>();
-			musicResults = musicService.GetAllMusic();
+			musicResults = musicService.getAllMusic();
 		Iterable<Album> albumResults = new ArrayList<>();
-			albumResults = albumService.GetAllAlbums();
+			//albumResults = albumService.GetAllAlbums();
 		Iterable<Accessory> accessoryResults = new ArrayList<>();
 			accessoryResults = accessoryService.GetAllAccessories();
 
 //Search instruments	
-		for(Product i: instrumentResults) {
+		for(Instrument i: instrumentResults) {
 			if(i.getName() == search) {
 				results.add(i);
 			}
-			if (i.getMaker() == search) {
+			if (i.getBrand() == search) {
 				results.add(i);
 			}
 		}
@@ -128,9 +128,9 @@ public class searchController {
 		Iterable<Services> serviceResults = new ArrayList<>();
 			serviceResults = servicesService.GetAllServices();
 		Iterable<Music> musicResults = new ArrayList<>();
-			musicResults = musicService.GetAllMusic();
+			musicResults = musicService.getAllMusic();
 		Iterable<Album> albumResults = new ArrayList<>();
-			albumResults = albumService.GetAllAlbums();
+			//albumResults = albumService.GetAllAlbums();
 		Iterable<Accessory> accessoryResults = new ArrayList<>();
 			accessoryResults = accessoryService.GetAllAccessories();
 
@@ -139,7 +139,7 @@ public class searchController {
 			if(i.getName() == search && i.getPrice() > priceLow && i.getPrice() < priceHigh) {
 				results.add(i);
 			}
-			if (i.getMaker() == search && i.getPrice() > priceLow && i.getPrice() < priceHigh) {
+			if (i.getBrand() == search && i.getPrice() > priceLow && i.getPrice() < priceHigh) {
 				results.add(i);
 			}
 		}
@@ -175,7 +175,7 @@ public class searchController {
 			if(i.getName() == search && i.getPrice() > priceLow && i.getPrice() < priceHigh) {
 				results.add(i);
 			}
-			if (i.getMaker() == search && i.getPrice() > priceLow && i.getPrice() < priceHigh) {
+			if (i.getBrand() == search && i.getPrice() > priceLow && i.getPrice() < priceHigh) {
 				results.add(i);
 			}
 		}

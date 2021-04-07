@@ -44,7 +44,6 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 //		
 //		Album ab1 = new Album("Appetite for Destruction", Category.MUSIC, 9.99, Platform.DIGITAL, MusicType.ALBUM, "Guns n Roses", "Rock");
 
-
 		
 		productRepo.save(p1);
 		productRepo.save(p2);
