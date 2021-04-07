@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
   
-  <title>Homepage</title>
+  <title>Music Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,20 +44,33 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
-  			<li class="nav-item active">
-      			<a class="nav-link" href="login.jsp">Login</a>
-    		</li>
     		<li class="nav-item active">
       			<a class="nav-link" href="cart.jsp">Cart</a>
     		</li>
   		</ul>
 	</div>
   </nav>
-
   
-  <h1>Homepage</h1>
-	<p>Maybe show some pictures</p>
-	<p>Could also fill with text</p>
+  <form action="#">
+  	<input type="text" placeholder="Search.." name="search">
+  	<br><br>
+  	<input type="radio" id="title" name="title" value="title" style="margin-left: 5px" checked>
+  		<label for="title">By Title</label>
+  	<input type="radio" id="artist" name="artist" value="artist" style="margin-left: 5px">
+  		<label for="artist">By Artist  </label>
+  	<input type="radio" id="style" name="style" value="style" style="margin-left: 5px">
+  		<label for="style">By Style  </label>
+  	<input type="radio" id="format" name="format" value="format" style="margin-left: 5px">
+  		<label for="format">By Format  </label>
+  	<input type="radio" id="price" name="price" value="price" style="margin-left: 5px">
+  		<label for="price">By Price  </label>
+  	<br>
+  	<input type="submit" value="Submit">
+   </form> 
+  <br><br>
+  <h1>This is where we will display songs/albums</h1>
+  
+
 	<!-- Footer -->
 	<footer class="page-footer font-small indigo">
 	
