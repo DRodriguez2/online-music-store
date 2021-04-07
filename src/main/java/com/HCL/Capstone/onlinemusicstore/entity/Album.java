@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
@@ -16,7 +17,7 @@ import lombok.Getter;
 @Getter
 public class Album extends Music{
 	
-	@ManyToMany(mappedBy="albums")
+	@ManyToMany(mappedBy="albums", fetch=FetchType.EAGER)
 	List<Song> songs = new ArrayList<>();
 	
 	public Album() {}
