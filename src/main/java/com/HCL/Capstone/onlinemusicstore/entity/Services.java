@@ -10,14 +10,14 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class Service extends Product{
+public class Services extends Product{
 	
 	@NotEmpty(message="Value required")
 	String description;
 	
-	public Service() {}
+	public Services() {}
 
-	public Service(String name, Category category, Double price, String description) {
+	public Services(String name, Category category, Double price, String description) {
 		super(name, category, price);
 		this.description = description;
 	}

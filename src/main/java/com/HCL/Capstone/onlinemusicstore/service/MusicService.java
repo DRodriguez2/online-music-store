@@ -3,10 +3,8 @@ package com.HCL.Capstone.onlinemusicstore.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.HCL.Capstone.onlinemusicstore.entity.Album;
 import com.HCL.Capstone.onlinemusicstore.entity.Music;
 import com.HCL.Capstone.onlinemusicstore.entity.Song;
@@ -122,12 +120,5 @@ public class MusicService {
 		if(songs.isPresent()) return songs.get().stream().map(music -> (Song) music).collect(Collectors.toList());
 		else throw new MusicNotFoundException();
 	}
-	
-
-
-
-	
-
-
-
 }
+

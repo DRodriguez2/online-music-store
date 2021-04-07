@@ -6,4 +6,5 @@ import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 
 public interface AccessoryRepository extends JpaRepository<Accessory, Long>{
 
+	public Accessory findByName(String name);
 }
