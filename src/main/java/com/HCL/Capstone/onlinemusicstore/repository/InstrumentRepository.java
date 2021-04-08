@@ -17,7 +17,7 @@ public interface InstrumentRepository extends JpaRepository<Instrument, Long> {
 	
 	public Optional<List<Instrument>> findAllByBrandContainsIgnoreCase(String Brand);
 	
-	public Optional<List<Instrument>> findAllByCatagory(Category catagory);
+	public Optional<List<Instrument>> findAllByCategory(Category category);
 		
 	@Query("SELECT DISTINCT m.name FROM Instrument m")
 	public List<String> findAllUniqueName();

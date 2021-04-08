@@ -45,8 +45,8 @@ public class AccessoryService {
 		else throw new ProductNotFoundException();
     }
 
-    public List<Accessory> findAllByCatagory(Category input) throws ProductNotFoundException {
-		Optional<List<Accessory>> products = accessoryRepository.findAllByCatagory(input);
+    public List<Accessory> findAllByCategory(Category input) throws ProductNotFoundException {
+		Optional<List<Accessory>> products = accessoryRepository.findAllByCategory(input);
 		if(products.isPresent()) return products.get();
 		else throw new ProductNotFoundException();
     }

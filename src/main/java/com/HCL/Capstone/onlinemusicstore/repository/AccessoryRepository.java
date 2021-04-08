@@ -17,7 +17,7 @@ public interface AccessoryRepository extends JpaRepository<Accessory, Long>{
 	
 	public Optional<List<Accessory>> findAllByBrandContainsIgnoreCase(String Brand);
 	
-	public Optional<List<Accessory>> findAllByCatagory(Category catagory);
+	public Optional<List<Accessory>> findAllByCategory(Category category);
 		
 	@Query("SELECT DISTINCT m.name FROM Instrument m")
 	public List<String> findAllUniqueName();
