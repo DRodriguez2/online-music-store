@@ -9,12 +9,13 @@ import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 import com.HCL.Capstone.onlinemusicstore.entity.Instrument;
 import com.HCL.Capstone.onlinemusicstore.entity.Product;
 import com.HCL.Capstone.onlinemusicstore.entity.Services;
+import com.HCL.Capstone.onlinemusicstore.entity.User;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.repository.AccessoryRepository;
 import com.HCL.Capstone.onlinemusicstore.repository.InstrumentRepository;
-import com.HCL.Capstone.onlinemusicstore.repository.MusicRepository;
 import com.HCL.Capstone.onlinemusicstore.repository.ProductRepository;
 import com.HCL.Capstone.onlinemusicstore.repository.ServiceRepository;
+import com.HCL.Capstone.onlinemusicstore.service.UserService;
 
 @SpringBootApplication
 public class OnlineMusicStoreApplication implements CommandLineRunner {
@@ -23,6 +24,7 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 	@Autowired private InstrumentRepository instrumentRepo;
 	@Autowired private ServiceRepository serviceRepo;
 	@Autowired private AccessoryRepository accessoryRepo;
+	@Autowired private UserService userService;
 	//@Autowired private MusicRepository musicRepo;
 	
 	public static void main(String[] args) {
@@ -44,7 +46,6 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 //		
 //		Album ab1 = new Album("Appetite for Destruction", Category.MUSIC, 9.99, Platform.DIGITAL, MusicType.ALBUM, "Guns n Roses", "Rock");
 
-
 		
 		productRepo.save(p1);
 		productRepo.save(p2);
@@ -57,6 +58,12 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 		
 //		musicRepo.save(so1);
 //		musicRepo.save(ab1);
+		
+		User user = new User("user", "password", "ROLE_USER", 1111);
+		User admin = new User("admin", "password", "ROLE_ADMIN", 1111);
+		
+		userService.createUser(user);
+		userService.createUser(admin);
 		
 		
 	}

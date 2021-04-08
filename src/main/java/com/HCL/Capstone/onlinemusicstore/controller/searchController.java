@@ -23,10 +23,12 @@ import java.util.List;
 public class searchController {
 
 	@Autowired
+
 	private ProductService ps;
 	
 	@RequestMapping(value = "/Search", method = RequestMethod.POST)
 	public String searchInventory(ModelMap model,@RequestParam String search) throws ProductNotFoundException {
+
 		
 		List <Product> results = new ArrayList<Product>(); 
 
@@ -40,7 +42,7 @@ public class searchController {
 	@RequestMapping(value = "/AdvSearch", method = RequestMethod.POST)
 	public String advanceSearchInventory(ModelMap model,@RequestParam String type,@RequestParam String search,
 			@RequestParam Double priceLow, @RequestParam Double priceHigh) throws ProductNotFoundException {
-		
+
 		List <Product> results = new ArrayList<Product>();
 		results = ps.getAllByNameContains(search);	
 
