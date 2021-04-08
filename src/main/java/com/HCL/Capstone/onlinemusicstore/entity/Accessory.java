@@ -1,6 +1,9 @@
 package com.HCL.Capstone.onlinemusicstore.entity;
 
 import javax.persistence.Entity;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import lombok.Getter;
