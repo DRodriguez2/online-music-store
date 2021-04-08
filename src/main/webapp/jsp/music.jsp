@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
   
-  <title>Instrument Page</title>
+  <title>Music Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,35 +29,46 @@
     <div class="collapse navbar-collapse" id="main-navigation">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="home.jsp">Home</a>
+          <a class="nav-link" href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="music.jsp">Music</a>
+          <a class="nav-link" href="music">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="instruments.jsp">Instruments</a>
+          <a class="nav-link" href="instruments">Instruments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="services.jsp">Services</a>
+          <a class="nav-link" href="services">Services</a>
         </li>
       </ul>
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
     		<li class="nav-item active">
-      			<a class="nav-link" href="cart.jsp">Cart</a>
+      			<a class="nav-link" href="cart">Cart</a>
     		</li>
   		</ul>
 	</div>
   </nav>
   
   <form action="#">
-  	<input type="text" placeholder="Search..." name="search">
+  	<input type="text" placeholder="Search.." name="search">
   	<br><br>
+  	<input type="radio" id="title" name="title" value="title" style="margin-left: 5px" checked>
+  		<label for="title">By Title</label>
+  	<input type="radio" id="artist" name="artist" value="artist" style="margin-left: 5px">
+  		<label for="artist">By Artist  </label>
+  	<input type="radio" id="style" name="style" value="style" style="margin-left: 5px">
+  		<label for="style">By Style  </label>
+  	<input type="radio" id="format" name="format" value="format" style="margin-left: 5px">
+  		<label for="format">By Format  </label>
+  	<input type="radio" id="price" name="price" value="price" style="margin-left: 5px">
+  		<label for="price">By Price  </label>
+  	<br>
   	<input type="submit" value="Submit">
    </form> 
   <br><br>
-  <h1>Instruments we sell</h1>
+  <h1>This is where we will display songs/albums</h1>
   
 
 	<!-- Footer -->

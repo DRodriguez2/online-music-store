@@ -9,7 +9,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DefaultController {
 	
 	@GetMapping
+	public String defaultPath() {
+		return "home"; 
+	}
+	
+	@GetMapping("/home")
 	public String home() {
 		return "home"; 
+	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login"; 
+	}
+	
+	@GetMapping("/music")
+	public String music() {
+		return "music"; 
+	}
+	
+	@GetMapping("/instruments")
+	public String instruments() {
+		return "instruments"; 
+	}
+	
+	@GetMapping("/services")
+	public String services() {
+		return "services"; 
+	}
+	
+	@GetMapping("/cart")
+	public String cart() {
+		return "cart"; 
+	}
+	
+	@GetMapping("/register")
+	public String register() {
+		return "register"; 
 	}
 }

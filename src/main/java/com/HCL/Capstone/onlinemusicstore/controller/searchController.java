@@ -22,8 +22,6 @@ public class searchController {
 	@Autowired
 	private MusicService musicService;
 	@Autowired
-	private AlbumService albumService;
-	@Autowired
 	private InstrumentService instrumentService;
 	@Autowired
 	private ServicesService servicesService;
