@@ -37,8 +37,8 @@ public class InstrumentService {
 		else throw new ProductNotFoundException();
     }
 
-    public List<Instrument> findAllByCatagory(Category input) throws ProductNotFoundException {
-		Optional<List<Instrument>> products = instrumentRepository.findAllByCatagory(input);
+    public List<Instrument> findAllByCategory(Category input) throws ProductNotFoundException {
+		Optional<List<Instrument>> products = instrumentRepository.findAllByCategory(input);
 		if(products.isPresent()) return products.get();
 		else throw new ProductNotFoundException();
     }

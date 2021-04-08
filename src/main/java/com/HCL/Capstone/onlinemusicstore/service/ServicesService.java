@@ -32,8 +32,8 @@ public class ServicesService {
 		else throw new ProductNotFoundException();
 	}
 
-    public List<Services> findAllByCatagory(Category input) throws ProductNotFoundException {
-		Optional<List<Services>> products = serviceRepository.findAllByCatagory(input);
+    public List<Services> findAllByCategory(Category input) throws ProductNotFoundException {
+		Optional<List<Services>> products = serviceRepository.findAllByCategory(input);
 		if(products.isPresent()) return products.get();
 		else throw new ProductNotFoundException();
     }
