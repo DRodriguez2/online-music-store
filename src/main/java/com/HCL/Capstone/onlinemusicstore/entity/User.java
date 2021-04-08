@@ -6,9 +6,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 
@@ -21,16 +18,18 @@ public class User {
 
 	@Id
 	@GeneratedValue
-	Long userID; 
+	private Long userID; 
 	
 	@NotEmpty(message = "Value required")
-	String username; 
+	private String username; 
 
 	@NotEmpty(message = "Value required") 
-	String password; 
+	private String password; 
 	
+	
+	//Multiple roles should be separated by a comma
 	@NotEmpty(message = "Value Required")
-	String role; //TODO: needs a way to assign role with spring sec
+	private String role; //TODO: needs a way to assign role with spring sec
 	
 //	@OneToOne
 //	@JoinTable(name="USER_CART", 
@@ -39,9 +38,12 @@ public class User {
 //	Integer cartID; 
 	
 	@Transient
-	List<Product> userCart = new ArrayList<>();
+	private List<Product> userCart = new ArrayList<>();
 	
-	Integer creditCard; 
+	private Integer creditCard; 
+	
+	
+	public User() {};
 	
 	public User(String username, String password, String role, Integer creditCard) { 
 		super(); 
