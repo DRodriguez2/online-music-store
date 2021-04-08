@@ -68,7 +68,7 @@ public class MusicService {
 		else throw new NoAlbumsInDatabaseException();
 	}
 	public List<Album> getAllAlbumsByArtist(String artist) throws MusicNotFoundException {
-		Optional<List<Music>> albums = mr.findAllByArtistAndType(artist, MusicType.ALBUM);
+		Optional<List<Music>> albums = mr.findAllByArtistContainsIgnoreCaseAndType(artist, MusicType.ALBUM);
 		if(albums.isPresent()) return albums.get().stream().map(music -> (Album) music).collect(Collectors.toList());
 		else throw new MusicNotFoundException();
 	}
@@ -106,7 +106,7 @@ public class MusicService {
 		else throw new NoSongsInDatabaseException();
 	}
 	public List<Song> getAllSongsByArtist(String artist) throws MusicNotFoundException {
-		Optional<List<Music>> songs = mr.findAllByArtistAndType(artist, MusicType.SONG);
+		Optional<List<Music>> songs = mr.findAllByArtistContainsIgnoreCaseAndType(artist, MusicType.SONG);
 		if(songs.isPresent()) return songs.get().stream().map(music -> (Song) music).collect(Collectors.toList());
 		else throw new MusicNotFoundException();
 	}

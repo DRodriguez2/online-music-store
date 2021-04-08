@@ -2,13 +2,15 @@ package com.HCL.Capstone.onlinemusicstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import com.HCL.Capstone.onlinemusicstore.entity.User;
 import com.HCL.Capstone.onlinemusicstore.repository.UserRepository;
 
 @Service 
 public class UserService {
 	
+	@Autowired 
+	private PasswordEncoder encoder;
 	
 	@Autowired
 	public UserRepository userRepo; 
@@ -24,6 +26,7 @@ public class UserService {
 	
 	
 	public void createUser (User newUser) { 
+		newUser.setPassword(encoder.encode(newUser.getPassword()));
 		userRepo.save(newUser);	
 	}
 	

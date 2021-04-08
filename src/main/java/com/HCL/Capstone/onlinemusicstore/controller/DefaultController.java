@@ -23,11 +23,6 @@ public class DefaultController {
 		return "login"; 
 	}
 	
-	@GetMapping("/music")
-	public String music() {
-		return "music"; 
-	}
-	
 	@GetMapping("/instruments")
 	public String instruments() {
 		return "instruments"; 

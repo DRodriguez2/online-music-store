@@ -22,7 +22,7 @@ public interface MusicRepository extends JpaRepository<Music, Long>{
 	
 	public Optional<List<Music>> findAllByPlatformAndType(Platform platform, MusicType type);
 	
-	public Optional<List<Music>> findAllByArtistAndType(String artist, MusicType type);
+	public Optional<List<Music>> findAllByArtistContainsIgnoreCaseAndType(String artist, MusicType type);
 	
 	public Optional<List<Music>> findAllByGenreAndType(String genre, MusicType type);
 	
