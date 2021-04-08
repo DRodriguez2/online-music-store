@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.repository.*;
 
@@ -30,6 +31,12 @@ public class ServicesService {
 		if(products.isPresent()) return products.get();
 		else throw new ProductNotFoundException();
 	}
+
+    public List<Services> findAllByCatagory(Category input) throws ProductNotFoundException {
+		Optional<List<Services>> products = serviceRepository.findAllByCatagory(input);
+		if(products.isPresent()) return products.get();
+		else throw new ProductNotFoundException();
+    }
     
     public Services GetServiceByName(String name) throws ProductNotFoundException {
     	Services item = serviceRepository.findByName(name);

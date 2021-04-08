@@ -45,7 +45,6 @@ public class searchController {
 
 		List <Product> results = new ArrayList<Product>();
 		results = ps.getAllByNameContains(search);	
-
 		for(Product i: results) {
 			if(i.getPrice() < priceLow || i.getPrice() > priceHigh) {
 				results.remove(i);

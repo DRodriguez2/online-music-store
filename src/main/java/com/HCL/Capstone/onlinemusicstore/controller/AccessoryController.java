@@ -61,8 +61,18 @@ public class AccessoryController {
 	public String searchInstrument(ModelMap model, @RequestParam String search)throws ProductNotFoundException {
 		
 		List <Accessory> results = new ArrayList<Accessory>();
+		List <Accessory> nameResults = new ArrayList<Accessory>();
+		List <Accessory> brandResults = new ArrayList<Accessory>();
+
 		
-		results = accessoryService.findAllByNameContainsIgnoreCase(search);
+		nameResults = accessoryService.findAllByNameContainsIgnoreCase(search);
+		brandResults = accessoryService.findAllByBrandContainsIgnoreCase(search);
+		for(Accessory i : nameResults) {
+			results.add(i);
+		}
+		for(Accessory i : brandResults) {
+			results.add(i);
+		}
 		model.addAttribute("searchResults", results);
 		return "searchResults";
 	}

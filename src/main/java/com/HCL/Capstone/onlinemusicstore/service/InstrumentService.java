@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.repository.*;
 
@@ -29,6 +30,18 @@ public class InstrumentService {
 		if(products.isPresent()) return products.get();
 		else throw new ProductNotFoundException();
 	}
+    
+    public List<Instrument> findAllByBrandContainsIgnoreCase(String input) throws ProductNotFoundException {
+		Optional<List<Instrument>> products = instrumentRepository.findAllByBrandContainsIgnoreCase(input);
+		if(products.isPresent()) return products.get();
+		else throw new ProductNotFoundException();
+    }
+
+    public List<Instrument> findAllByCatagory(Category input) throws ProductNotFoundException {
+		Optional<List<Instrument>> products = instrumentRepository.findAllByCatagory(input);
+		if(products.isPresent()) return products.get();
+		else throw new ProductNotFoundException();
+    }
 
     public Instrument GetInstrumentByName(String name) throws ProductNotFoundException {
     	Instrument item = instrumentRepository.findByName(name);

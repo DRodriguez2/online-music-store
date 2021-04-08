@@ -15,7 +15,7 @@ public interface InstrumentRepository extends JpaRepository<Instrument, Long> {
 
 	public Optional<List<Instrument>> findAllByNameContainsIgnoreCase(String name);
 	
-	public Optional<List<Instrument>> findAllByBrand(String Brand);
+	public Optional<List<Instrument>> findAllByBrandContainsIgnoreCase(String Brand);
 	
 	public Optional<List<Instrument>> findAllByCatagory(Category catagory);
 		
