@@ -15,7 +15,7 @@ public interface AccessoryRepository extends JpaRepository<Accessory, Long>{
 
 	public Optional<List<Accessory>> findAllByNameContainsIgnoreCase(String name);
 	
-	public Optional<List<Accessory>> findAllByBrand(String Brand);
+	public Optional<List<Accessory>> findAllByBrandContainsIgnoreCase(String Brand);
 	
 	public Optional<List<Accessory>> findAllByCatagory(Category catagory);
 		

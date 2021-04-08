@@ -17,9 +17,7 @@ public interface ServiceRepository extends JpaRepository<Services, Long>{
 	public Services findByName(String name);
 	
 	public Optional<List<Services>> findAllByNameContainsIgnoreCase(String name);
-	
-	public Optional<List<Services>> findAllByBrand(String Brand);
-	
+		
 	public Optional<List<Services>> findAllByCatagory(Category catagory);
 		
 	@Query("SELECT DISTINCT m.name FROM Services m")

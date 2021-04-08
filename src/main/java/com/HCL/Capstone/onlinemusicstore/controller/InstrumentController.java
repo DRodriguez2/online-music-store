@@ -62,8 +62,18 @@ public class InstrumentController {
 	public String searchInstrument(ModelMap model, @RequestParam String search)throws ProductNotFoundException {
 		
 		List <Instrument> results = new ArrayList<Instrument>();
+		List <Instrument> nameResults = new ArrayList<Instrument>();
+		List <Instrument> brandResults = new ArrayList<Instrument>();
+
 		
-		results = instrumentService.findAllByNameContainsIgnoreCase(search);
+		nameResults = instrumentService.findAllByNameContainsIgnoreCase(search);
+		brandResults = instrumentService.findAllByBrandContainsIgnoreCase(search);
+		for(Instrument i : nameResults) {
+			results.add(i);
+		}
+		for(Instrument i : brandResults) {
+			results.add(i);
+		}
 		model.addAttribute("searchResults", results);
 		return "searchResults";
 	}
