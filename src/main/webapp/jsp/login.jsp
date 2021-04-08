@@ -13,6 +13,6 @@
     <input type="submit" value="Log in"/>
 	</form>
 	
-	<button onclick="window.location.href='register.jsp'">Register</button>
+	<button onclick="window.location.href='register'">Register</button>
 </body>
 </html>

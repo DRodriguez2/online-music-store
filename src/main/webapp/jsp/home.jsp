@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
   
-  <title>Service Page</title>
+  <title>Homepage</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,37 +29,34 @@
     <div class="collapse navbar-collapse" id="main-navigation">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="home.jsp">Home</a>
+          <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="music.jsp">Music</a>
+          <a class="nav-link" href="music">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="instruments.jsp">Instruments</a>
+          <a class="nav-link" href="/instruments">Instruments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="services.jsp">Services</a>
+          <a class="nav-link" href="/services">Services</a>
         </li>
       </ul>
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
+  			<li class="nav-item active">
+      			<a class="nav-link" href="/login">Login</a>
+    		</li>
     		<li class="nav-item active">
-      			<a class="nav-link" href="cart.jsp">Cart</a>
+      			<a class="nav-link" href="/cart">Cart</a>
     		</li>
   		</ul>
 	</div>
   </nav>
   
-  <form action="#">
-  	<input type="text" placeholder="Search.." name="search">
-  	<br><br>
-  	<input type="submit" value="Submit">
-   </form> 
-  <br><br>
-  <h1>Services we have</h1>
-  
-
+  <h1>Homepage</h1>
+	<p>Maybe show some pictures</p>
+	<p>Could also fill with text</p>
 	<!-- Footer -->
 	<footer class="page-footer font-small indigo">
 	
