@@ -39,7 +39,7 @@ public class MusicController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("music");
 		List<Music> all = ms.getAllMusic();
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -58,7 +58,7 @@ public class MusicController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("music");
 		List<Song> all = ms.getAllSongs();
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -73,7 +73,7 @@ public class MusicController {
 		} catch (MusicNotFoundException e) {
 			all = null;
 		}
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -88,7 +88,7 @@ public class MusicController {
 		} catch (MusicNotFoundException e) {
 			all = null;
 		}
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -103,7 +103,7 @@ public class MusicController {
 		} catch (MusicNotFoundException e) {
 			all = null;
 		}
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -114,7 +114,7 @@ public class MusicController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("music");
 		List<Album> all = ms.getAllAlbums();
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -128,7 +128,7 @@ public class MusicController {
 		} catch (MusicNotFoundException e) {
 			all = null;
 		}
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -142,7 +142,7 @@ public class MusicController {
 		} catch (MusicNotFoundException e) {
 			all = null;
 		}
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 	
@@ -156,7 +156,7 @@ public class MusicController {
 		} catch (MusicNotFoundException e) {
 			all = null;
 		}
-		mv.addObject("musicList", all);
+		mv.addObject("searchResults", all);
 		return mv;
 	}
 
