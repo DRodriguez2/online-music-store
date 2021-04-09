@@ -39,6 +39,8 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/services">Services</a>
+         <li class="nav-item"> 
+         <a class = "nav-link" href="/register">Account Register</a>
         </li>
       </ul>
     </div>

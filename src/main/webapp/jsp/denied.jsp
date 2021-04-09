@@ -12,7 +12,7 @@
 <body>
 	<div class="container p-3 my-3 bg-dark text-white">
 		<h2>403 Access Denied</h2>
-		<h4>Please <a href="/loginPage">login</a></h4>
+		<h4>Please Login Again <a href="/login">login</a></h4>
 	</div>
 </body>
 </html>

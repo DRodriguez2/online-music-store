@@ -63,6 +63,7 @@ public class User {
 		return "User Info [userID=" + userID + ", username=" + username + ", password=" + password + ", cart=" + userCart.toString() + ", Credit Card # ="
 				+ creditCard +"]";
 	}
-	
+
+
 
 }

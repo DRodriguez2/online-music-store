@@ -10,10 +10,10 @@ public class DefaultController {
 	
 	@GetMapping
 	public String defaultPath() {
-		return "home"; 
+		return "home2"; 
 	}
 	
-	@GetMapping("/home")
+	@GetMapping("/home2")
 	public String home() {
 		return "home"; 
 	}
