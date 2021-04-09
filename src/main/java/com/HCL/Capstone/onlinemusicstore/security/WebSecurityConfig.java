@@ -1,6 +1,7 @@
-package com.HCL.Capstone.onlinemusicstore;
+package com.HCL.Capstone.onlinemusicstore.security;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +21,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
+import com.HCL.Capstone.onlinemusicstore.entity.Product;
 import com.HCL.Capstone.onlinemusicstore.entity.User;
-import com.HCL.Capstone.onlinemusicstore.security.MyUserDetails;
 
 @Configuration
 @EnableWebSecurity
@@ -47,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //						User user = userDetails.getUser();
 //
 //						request.getSession().setAttribute("user", user);
-//						request.getSession().setAttribute("cart", user.getUserCart());
+//						request.getSession().setAttribute("cart", new ArrayList<Product>());
 //						super.onAuthenticationSuccess(request, response, auth);
 //					}
 //				})

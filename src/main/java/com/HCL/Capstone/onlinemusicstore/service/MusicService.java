@@ -21,6 +21,12 @@ public class MusicService {
 	@Autowired
 	private MusicRepository mr;
 
+	public Music getMusicById(Long id) throws MusicNotFoundException {
+		Optional<Music> music = mr.findMusicById(id);
+		if(music.isPresent()) return music.get();
+		else throw new MusicNotFoundException();
+	}
+	
 	public Music getMusicByNameAndType(String name, MusicType type) throws MusicNotFoundException {
 		Optional<Music> music = mr.findMusicByNameAndType(name, type);
 		if(music.isPresent()) return music.get();
