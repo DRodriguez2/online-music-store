@@ -30,9 +30,9 @@
 
 </head>
 <body>
-<<<<<<< HEAD
 
   <%@ include file = "navbar.jsp" %>
+
   
   <h1>Music Store</h1>
 	<p>The Music Store built for music lovers like us</p>
@@ -51,7 +51,7 @@
     <div class="carousel-inner">
 
       <div class="carousel-item active">
-        <img src="@{/images/music1.jpg}" alt="Los Angeles" style="height:300px; width:100%; margin: auto;">
+        <img src="/images/music1.jpg" alt="Los Angeles" style="height:300px; width:100%; margin: auto;">
         <div class="carousel-caption">
           <h3>Instruments</h3>
           <p>Preowned and New</p>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="@{/images/music3.jpg}" alt="Chicago" style="height: 300px; width:100%; margin:auto;">
+        <img src="/images/music3.jpg" alt="Chicago" style="height: 300px; width:100%; margin:auto;">
         <div class="carousel-caption">
           <h3>Accessories</h3>
           <p>New Bose headphones in stock</p>
@@ -67,7 +67,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="@{/images/music4.jpg}" alt="New York" style="height:300px; width:100%; margin:auto;">
+        <img src="/images/music4.jpg" alt="New York" style="height:300px; width:100%; margin:auto;">
         <div class="carousel-caption">
           <h3>Music and Albums</h3>
           <p>70's, 80's, Modern, and Classics</p>
@@ -96,7 +96,7 @@
 
   <p></p>
 
-  <img src= "@{/images/music band.jpg}" width="500" height="300" style="width:50%;">
+  <img src= "/images/music band.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center bg-info"> Carrying Instruments for your Band or Hobby</p>
   <div class="container">
     <div class="row">
@@ -119,7 +119,7 @@
 
   <p></p>
 
-  <img src= "@{/images/musiclessons.jpg}" width="500" height="300" style="width:50%;">
+  <img src= "/images/musiclessons.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center bg-info"> We provide services and classes</p>
   <div class="container">
     <div class="row">
@@ -139,7 +139,7 @@
   </div>
 
   <p></p>
-  <img src= "@{images/musicalbums.jpg}" width="500" height="300" style="width:50%;">
+  <img src= "images/musicalbums.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center bg-info"> We have modern and classics available</p>
   <div class="container">
     <div class="row">
@@ -166,7 +166,7 @@
 	<footer class="page-footer font-small indigo">
     
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. © 2018 Copyright
+    <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. Â© 2018 Copyright
     </div>
     <!-- Copyright -->
 
