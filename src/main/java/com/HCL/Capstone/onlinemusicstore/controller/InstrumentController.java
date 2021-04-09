@@ -1,6 +1,7 @@
 package com.HCL.Capstone.onlinemusicstore.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.HCL.Capstone.onlinemusicstore.entity.*;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
+import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.service.*;
 
 
@@ -23,7 +25,7 @@ public class InstrumentController {
 	private InstrumentService instrumentService;
 	
 	@RequestMapping(value = "/DeleteInstrument", method = RequestMethod.POST)
-	public String deleteInstrument(ModelMap model,@RequestParam String type,@RequestParam String name) {
+	public String deleteInstrument(ModelMap model,@RequestParam String type,@RequestParam String name)throws ProductNotFoundException {
 		 
 		Instrument instrument = instrumentService.GetInstrumentByName(name);
 		instrumentService.DeleteInstrument(instrument);
@@ -34,7 +36,7 @@ public class InstrumentController {
 	
 	@RequestMapping(value = "/UpdateInstrument", method = RequestMethod.POST)
 	public String updateInstrument(ModelMap model, @RequestParam Category category, @RequestParam String name, 
-			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) {
+			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) throws ProductNotFoundException{
 		
 		Instrument object = instrumentService.GetInstrumentByName(name);
 		object = new Instrument(name, category, price, brand, description);
@@ -54,6 +56,28 @@ public class InstrumentController {
 		instrumentService.UpdateInstrument(object);
 		return "taskresult";
 	}
+	
+	
+	@RequestMapping(value = "/SearchInstrument", method = RequestMethod.POST)
+	public String searchInstrument(ModelMap model, @RequestParam String search)throws ProductNotFoundException {
+		
+		List <Instrument> results = new ArrayList<Instrument>();
+		List <Instrument> nameResults = new ArrayList<Instrument>();
+		List <Instrument> brandResults = new ArrayList<Instrument>();
+
+		
+		nameResults = instrumentService.findAllByNameContainsIgnoreCase(search);
+		brandResults = instrumentService.findAllByBrandContainsIgnoreCase(search);
+		for(Instrument i : nameResults) {
+			results.add(i);
+		}
+		for(Instrument i : brandResults) {
+			results.add(i);
+		}
+		model.addAttribute("searchResults", results);
+		return "searchResults";
+	}
+	
 	
 	@RequestMapping(value = "/ViewInstrument", method = RequestMethod.GET)
 	public String viewInstrument(ModelMap model) {
