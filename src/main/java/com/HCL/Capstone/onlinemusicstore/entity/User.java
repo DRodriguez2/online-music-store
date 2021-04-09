@@ -37,8 +37,6 @@ public class User {
 //	   inverseJoinColumns = @JoinColumn(name="CART_ID"))
 //	Integer cartID; 
 	
-	@Transient
-	private List<Product> userCart = new ArrayList<>();
 	
 	private Integer creditCard; 
 	
@@ -53,14 +51,12 @@ public class User {
 		this.creditCard = creditCard; 
 	}
 	
-	public void addProduct(Product product) {
-		userCart.add(product);
-	}
+
 	
 	
 	@Override 
 	public String toString()  { 
-		return "User Info [userID=" + userID + ", username=" + username + ", password=" + password + ", cart=" + userCart.toString() + ", Credit Card # ="
+		return "User Info [userID=" + userID + ", username=" + username + ", password=" + password + ", Credit Card # ="
 				+ creditCard +"]";
 	}
 	

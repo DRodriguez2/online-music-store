@@ -13,6 +13,8 @@ import com.HCL.Capstone.onlinemusicstore.entity.enums.Platform;
 public interface MusicRepository extends JpaRepository<Music, Long>{
 	
 	public Music findMusicByName(String name);
+	
+	public Optional<Music> findMusicById(Long id);
 
 	public Optional<Music> findMusicByNameAndType(String name, MusicType type);
 	
