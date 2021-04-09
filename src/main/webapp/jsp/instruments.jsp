@@ -51,6 +51,7 @@
                     <input type="text" placeholder="Search by name or brand" name="search">
                     <br><br>
                     <input type="submit" value="Submit">
+                    </form>
             </li>
         </ul>
       </div>
@@ -64,7 +65,7 @@
       <div class="col">
         <ul class="list-group">
             <li class="list-group-item">
-                <h3>Click and view all that we have in stock</h3>
+                <h3 class="text-center">Click and view all that we have in stock</h3>
                 <form id="ViewInstrument" action="ViewInstrument" class="text-center" method="GET">
                     <button >View all of our Wonderful Instruments</button>
                 </form>
