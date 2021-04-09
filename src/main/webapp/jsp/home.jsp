@@ -32,7 +32,7 @@
 <body>
   
   <nav class="navbar navbar-expand-md" style = "background-color: rgb(218, 218, 218);">
-    <a class="navbar-brand" href="home.html"><img src="@{/images/musichome.png}" style = "height: 70px;" alt=""></a>
+    <a class="navbar-brand" href="/home"><img src="/images/musichome.png" style = "height: 70px;" alt=""></a>
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,7 +55,7 @@
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
   			<li class="nav-item active">
-      			<a class="nav-link" href="/capstone/login.html">Login</a>
+      			<a class="nav-link" href="/login">Login</a>
     		</li>
     		<li class="nav-item active">
       			<a class="nav-link" href="/cart">Cart</a>
@@ -81,7 +81,7 @@
     <div class="carousel-inner">
 
       <div class="carousel-item active">
-        <img src="@{/images/music1.jpg}" alt="Los Angeles" style="height:300px; width:100%; margin: auto;">
+        <img src="/images/music1.jpg" alt="Los Angeles" style="height:300px; width:100%; margin: auto;">
         <div class="carousel-caption">
           <h3>Instruments</h3>
           <p>Preowned and New</p>
@@ -89,7 +89,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="@{/images/music3.jpg}" alt="Chicago" style="height: 300px; width:100%; margin:auto;">
+        <img src="/images/music3.jpg" alt="Chicago" style="height: 300px; width:100%; margin:auto;">
         <div class="carousel-caption">
           <h3>Accessories</h3>
           <p>New Bose headphones in stock</p>
@@ -97,7 +97,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="@{/images/music4.jpg}" alt="New York" style="height:300px; width:100%; margin:auto;">
+        <img src="/images/music4.jpg" alt="New York" style="height:300px; width:100%; margin:auto;">
         <div class="carousel-caption">
           <h3>Music and Albums</h3>
           <p>70's, 80's, Modern, and Classics</p>
@@ -126,7 +126,7 @@
 
   <p></p>
 
-  <img src= "@{/images/music band.jpg}" width="500" height="300" style="width:50%;">
+  <img src= "/images/music band.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center bg-info"> Carrying Instruments for your Band or Hobby</p>
   <div class="container">
     <div class="row">
@@ -149,7 +149,7 @@
 
   <p></p>
 
-  <img src= "@{/images/musiclessons.jpg}" width="500" height="300" style="width:50%;">
+  <img src= "/images/musiclessons.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center bg-info"> We provide services and classes</p>
   <div class="container">
     <div class="row">
@@ -169,7 +169,7 @@
   </div>
 
   <p></p>
-  <img src= "@{images/musicalbums.jpg}" width="500" height="300" style="width:50%;">
+  <img src= "images/musicalbums.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center bg-info"> We have modern and classics available</p>
   <div class="container">
     <div class="row">
