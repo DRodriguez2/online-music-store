@@ -1,30 +1,21 @@
 package com.HCL.Capstone.onlinemusicstore.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Platform;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Getter
+@Getter @Setter
 public class Song extends Music{
 	
-	@ManyToMany(fetch=FetchType.EAGER)
-	@JoinTable(name="SONG_ALBUM", 
-	   joinColumns = @JoinColumn(name="SONG_ID"),
-	   inverseJoinColumns = @JoinColumn(name="ALBUM_ID")
-	)
-	List<Album> albums = new ArrayList<>();
+	@ManyToOne
+	private Album album;
 	
 	public Song() {}
 
@@ -32,11 +23,4 @@ public class Song extends Music{
 		super(name, category, price, platform, type, artist, genre);
 	}
 	
-	public void addAlbum(Album album) {
-		this.albums.add(album);
-	}
-	
-	public void removeAlbum(Album album) {
-		this.albums.remove(album);
-	}
 }

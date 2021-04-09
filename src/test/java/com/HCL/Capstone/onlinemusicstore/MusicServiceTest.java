@@ -16,9 +16,9 @@ import com.HCL.Capstone.onlinemusicstore.entity.Album;
 import com.HCL.Capstone.onlinemusicstore.entity.Music;
 import com.HCL.Capstone.onlinemusicstore.entity.Song;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
+import com.HCL.Capstone.onlinemusicstore.exceptions.MusicNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.exceptions.NoAlbumsInDatabaseException;
 import com.HCL.Capstone.onlinemusicstore.exceptions.NoSongsInDatabaseException;
-import com.HCL.Capstone.onlinemusicstore.exceptions.MusicNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.service.MusicService;
 
 @SpringBootTest(classes = OnlineMusicStoreApplication.class)
@@ -29,19 +29,15 @@ class MusicServiceTest {
 	@Autowired
 	MusicService ms;
 
-//	@Test
-//	@Transactional
-//	public void findSong() {
-//		String songName = "Welcome to the Jungle";
-//		try {
-//			Music music = ms.getMusicByNameAndType(songName, MusicType.SONG);
-//			assertEquals(music.getName(), songName);
-//		} catch(MusicNotFoundException e) {
-//			fail();
-//		}
-//		
-//	}
-//
+	@Test
+	@Transactional
+	public void test() throws MusicNotFoundException {
+		List<Album> albums = ms.getAllAlbumByNameContaining("A");
+		Album a = (Album) albums.get(0);
+		logger.info("Album Name: " + a.getName());
+		logger.info("Album Songs: " + a.getSongs());
+	}
+
 //	@Test
 //	@Transactional
 //	public void findAlbum() {
@@ -102,7 +98,6 @@ class MusicServiceTest {
 //			logger.info("All songs continaing 'w' " + allSongs.toString());
 //			Song song = allSongs.get(0);
 //			logger.info("first song: " + song.toString());
-//			logger.info("Albums for first song: " + song.getAlbums().toString());
 //		} catch (MusicNotFoundException e) {
 //			fail();
 //		}
