@@ -30,13 +30,7 @@ class OnlineMusicStoreApplicationTests {
 	@Transactional
 	public void basicTesting() {
 		
-		Album album = new Album("Greatest Hits", Category.MUSIC, 9.99, Platform.DIGITAL, MusicType.ALBUM, "Guns n Roses", "Rock");
-		mr.save(album);
-		Song song = (Song) mr.findMusicByName("Welcome to the Jungle");
-		song.addAlbum(album);
-		album.addSong(song);
-		logger.info(song.getAlbums().toString());
-		logger.info(album.getSongs().toString());
+
 		
 	}
 
