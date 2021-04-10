@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
   
-  <title>Music Page</title>
+  <title>Task Result</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,36 +17,36 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.2.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+    <style>
+      img{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body{
+        background-color: aliceblue;
+      }
+    </style>
 
 </head>
 <body>
 
-  
   <%@ include file = "navbar.jsp" %>
-  
-  <form action="#">
-  	<input type="text" placeholder="Search.." name="search">
-  	<br><br>
-  	<input type="radio" id="title" name="title" value="title" style="margin-left: 5px" checked>
-  		<label for="title">By Title</label>
-  	<input type="radio" id="artist" name="artist" value="artist" style="margin-left: 5px">
-  		<label for="artist">By Artist  </label>
-  	<input type="radio" id="style" name="style" value="style" style="margin-left: 5px">
-  		<label for="style">By Style  </label>
-  	<input type="radio" id="format" name="format" value="format" style="margin-left: 5px">
-  		<label for="format">By Format  </label>
-  	<input type="radio" id="price" name="price" value="price" style="margin-left: 5px">
-  		<label for="price">By Price  </label>
-  	<br>
-  	<input type="submit" value="Submit">
-   </form> 
-  <br>
-	<%@ include file = "testMusicTable.jsp" %>
+  <img src= "/images/music3.jpg" width="500" height="300" style="width:50%;">
+  <h3 class="text-center">Task result successful</h3>
+<p></p>
+<h4>You may perform a new task or return home</h4>
 
+  
 	<!-- Footer -->
 	<footer class="page-footer font-small indigo">
-	
-	</footer>
+    
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. © 2018 Copyright
+    </div>
+    <!-- Copyright -->
+
+  </footer>
 	<!-- Footer -->
 
 

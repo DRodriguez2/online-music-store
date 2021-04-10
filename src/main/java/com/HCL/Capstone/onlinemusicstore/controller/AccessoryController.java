@@ -27,7 +27,7 @@ public class AccessoryController {
 	private AccessoryService accessoryService;
 	
 	@RequestMapping(value = "/DeleteAccessory", method = RequestMethod.POST)
-	public String deleteAccessory(ModelMap model,@RequestParam String type,@RequestParam String name) throws ProductNotFoundException{
+	public String deleteAccessory(ModelMap model,@RequestParam String name) throws ProductNotFoundException{
 		 
 			Accessory accessory = accessoryService.GetAccessoryByName(name);
 			accessoryService.DeleteAccessory(accessory);
@@ -37,11 +37,11 @@ public class AccessoryController {
 	
 	
 	@RequestMapping(value = "/UpdateAccessory", method = RequestMethod.POST)
-	public String updateAccessory(ModelMap model, @RequestParam Category category, @RequestParam String name, 
+	public String updateAccessory(ModelMap model, @RequestParam String name, 
 			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) throws ProductNotFoundException{
 		
 			Accessory object = accessoryService.GetAccessoryByName(name);
-			object = new Accessory(name, category, price, brand, description);
+			object = new Accessory(name, Category.ACCESSORIES, price, brand, description);
 			accessoryService.UpdateAccessory(object);
 			return "taskresult";
 	}
@@ -49,10 +49,10 @@ public class AccessoryController {
 	
 	
 	@RequestMapping(value = "/AddAccessory", method = RequestMethod.POST)
-	public String addAccessory(ModelMap model, @RequestParam Category category, @RequestParam String name, 
+	public String addAccessory(ModelMap model, @RequestParam String name, 
 			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) {
 		
-		Accessory object = new Accessory(name, category, price, brand, description);
+		Accessory object = new Accessory(name, Category.ACCESSORIES, price, brand, description);
 		accessoryService.UpdateAccessory(object);
 		return "taskresult";
 	}
@@ -73,8 +73,8 @@ public class AccessoryController {
 		for(Accessory i : brandResults) {
 			results.add(i);
 		}
-		model.addAttribute("searchResults", results);
-		return "searchResults";
+		model.addAttribute("accessoryResults", results);
+		return "accessoryResults";
 	}
 	
 	@RequestMapping(value = "/ViewAccessory", method = RequestMethod.GET)
@@ -82,7 +82,7 @@ public class AccessoryController {
 		
 		Iterable<Accessory> list = new ArrayList<>();
 		list = accessoryService.GetAllAccessories();
-		model.addAttribute("searchResults", list);
-		return "searchResults";
+		model.addAttribute("accessoryResults", list);
+		return "accessoryResults";
 	}
 }
