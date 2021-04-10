@@ -127,7 +127,7 @@ public class MusicService {
 		Optional<List<Music>> songs = mr.findAllByPlatformAndType(platform, MusicType.SONG);
 		if(songs.isPresent()) return songs.get().stream().map(music -> (Song) music).collect(Collectors.toList());
 		else throw new MusicNotFoundException();
-	
+	}
 	public void insertAlbums() { 
 		
 		Album ab1 = new Album("Appetite for Destruction", Category.MUSIC, 9.99, Platform.DIGITAL, MusicType.ALBUM, "Guns n Roses", "Rock");

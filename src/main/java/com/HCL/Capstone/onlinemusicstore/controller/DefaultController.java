@@ -51,4 +51,9 @@ public class DefaultController {
 	public String register() {
 		return "register"; 
 	}
+	
+	@GetMapping("/denied")
+	public String accessDenied() {
+		return "denied"; 
+	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 
@@ -81,9 +82,10 @@
             <li class="list-group-item">
                 <form action="/login" method="post">
    					User name: <input type="text" name="username" id="username" placeholder="username" required> <br><br>
-    				Password: <input type="text" name="password" id="password" placeholder="password" required> <br><br>
+    				Password: <input type="password" name="password" id="password" placeholder="password" required> <br><br>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<input type="submit" value="Log In"/>
+					<c:out value="${result} hereeee"/>
 				</form>
             </li>
 
