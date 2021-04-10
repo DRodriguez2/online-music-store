@@ -52,6 +52,8 @@
                     <input type="text" placeholder="Search by name or brand" name="search">
                     <br><br>
                     <input type="submit" value="Submit">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                    
                     </form>
             </li>
         </ul>

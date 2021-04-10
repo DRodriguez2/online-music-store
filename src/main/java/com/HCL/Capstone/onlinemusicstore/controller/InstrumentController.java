@@ -75,8 +75,8 @@ public class InstrumentController {
 		for(Instrument i : brandResults) {
 			results.add(i);
 		}
-		model.addAttribute("searchResults", results);
-		return "searchResults";
+		model.addAttribute("instrumentResults", results);
+		return "instrumentResults";
 	}
 	
 	
@@ -85,7 +85,7 @@ public class InstrumentController {
 		
 		Iterable<Instrument> list = new ArrayList<>();
 		list = instrumentService.GetAllInstruments();
-		model.addAttribute("searchResults", list);
-		return "searchResults";
+		model.addAttribute("instrumentResults", list);
+		return "instrumentResults";
 	}
 }
