@@ -35,9 +35,11 @@
 </head>
 <body>
 
-
-	<h1>ADMIN PAGE</h1>
-
+	<%@ include file="navbar.jsp"%>
+	<div class="container mt-3">
+		<h1>ADMIN PAGE</h1>
+	</div>
+	
 
 	<div class="row">
 		<div class="col-2">
