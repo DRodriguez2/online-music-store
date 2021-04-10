@@ -44,6 +44,7 @@
 				<th>Price</th>
 				<th>Type</th>
 				<th>Brand</th>
+				<th>Add to Cart</th>
 			</tr>
 			<c:forEach items="${instrumentResults}" var="instrument">
 				<tr>
@@ -56,17 +57,10 @@
 					<td><form action="/cart/add" method="post">
 							<button type="submit" class="btn btn-primary">Select</button>
 							<input type="hidden" name="id" value="${instrument.getId()}" />
-							<input type="hidden" name="table" value="${instrumentResults}" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-							<input type="hidden" name="view" value="instrument" />
-							
-							
+							<input type="hidden" name="view" value="instrumentResults" />
+							<input type="hidden" name="table" value="${instrumentResults}"/>	
 						</form></td>
-					<td><form action="/home/deleteTask" method="POST">
-							<button type="submit" class="btn btn-primary">Delete</button>
-							<input type="hidden" name="taskId" value="${instrument.getId()}" />
-							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-						</form>
 				</tr>
 			</c:forEach>
 		</table>

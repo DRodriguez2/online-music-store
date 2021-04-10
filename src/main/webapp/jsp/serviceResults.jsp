@@ -43,6 +43,7 @@
 				<th>Category</th>
 				<th>Price</th>
 				<th>Description</th>
+				<th>Add to Cart</th>
 			</tr>
 			<c:forEach items="${serviceResults}" var="services">
 				<tr>
@@ -56,15 +57,8 @@
 							<input type="hidden" name="id" value="${services.getId()}" />
 							<input type="hidden" name="table" value="${serviceResults}" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-							<input type="hidden" name="view" value="accessory" />
-							
-							
+							<input type="hidden" name="view" value="serviceResults" />	
 						</form></td>
-					<td><form action="/home/deleteTask" method="POST">
-							<button type="submit" class="btn btn-primary">Delete</button>
-							<input type="hidden" name="taskId" value="${services.getId()}" />
-							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-						</form>
 				</tr>
 			</c:forEach>
 		</table>
