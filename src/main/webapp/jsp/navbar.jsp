@@ -27,7 +27,7 @@
           <a class="nav-link" href="/services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/accessory">Accessories</a>
+          <a class="nav-link" href="accessory">Accessories</a>
         </li>
       </ul>
     </div>
@@ -35,6 +35,9 @@
   		<ul class="navbar-nav">
   			<li class="nav-item active">
       			<a class="nav-link" href="/admin">Admin</a>
+    		</li>
+    		<li class="nav-item active">
+      			<a class="nav-link" href="/account">My Account</a>
     		</li>
   			<li class="nav-item active">
       			<a class="nav-link" href="/login">Login</a>
