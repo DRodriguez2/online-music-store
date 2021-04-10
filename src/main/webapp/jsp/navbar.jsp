@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-md">
@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="main-navigation">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/home">Home</a>
+          <a class="nav-link" href="/home2">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="music">Music</a>
@@ -35,6 +35,9 @@
     		</li>
     		<li class="nav-item active">
       			<a class="nav-link" href="/cart">Cart</a>
+      			
+      		<li class = "nav-item active"> 
+      			<a class = "nav-link" href="/register">Register</a>
     		</li>
   		</ul>
 	</div>

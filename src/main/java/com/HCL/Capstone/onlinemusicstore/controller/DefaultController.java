@@ -14,7 +14,7 @@ import com.HCL.Capstone.onlinemusicstore.entity.Product;
 @Controller
 @RequestMapping("/")
 public class DefaultController {
-	
+
 	@GetMapping()
 	public String defaultPath(HttpServletRequest req) {
 		List<Product> cart = new ArrayList<>();
@@ -22,9 +22,9 @@ public class DefaultController {
 		return "home"; 
 	}
 	
-	@GetMapping("/home")
+	@GetMapping("/home2")
 	public String home() {
-		return "home"; 
+		return "home2"; 
 	}
 	
 	@GetMapping("/login")

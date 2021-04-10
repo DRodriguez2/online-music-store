@@ -59,6 +59,7 @@ public class User {
 		return "User Info [userID=" + userID + ", username=" + username + ", password=" + password + ", Credit Card # ="
 				+ creditCard +"]";
 	}
-	
+
+
 
 }

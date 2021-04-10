@@ -4,7 +4,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Log-in</title>
+<title>Register User</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -84,8 +84,7 @@
             <li class="list-group-item">
                 <h3>Register</h3>
                 <p>-Welcome new user!-</p>
-                <p>Insert a username and password</p>
-                <p></p>
+                <p>Insert a username, password, and credit card number.</p>
                 <p>Be sure to reconfirm your password</p>
             </li>
         </ul>
@@ -93,12 +92,20 @@
       <div class="col">
         <ul class="list-group">
             <li class="list-group-item">
-              <form action="#" method="#">
-                Create a Username: <input type="text" name="newUN" id="newUN"> <br><br>
-                Create a Password: <input type="text" name="pass1" id="pass1"> <br><br>
-                Retype Your Password: <input type="text" name="pass2" id="pass2"> <br><br>
-                <input type="submit" value="Submit" onClick="return same()"/>
-            </form>
+              <form action="/register" method="post"> <!-- Passing values to register new user -->
+              	<h2>Enter User Information</h2>
+              	<br>
+    			Create a Username: <input type="text" name="uname" id="uname" placeholder="Username" required> <br><br>
+    			Create a Password: <input type="password" name="pass1" id="pass1" placeholder="Password" required> <br><br>
+    			Retype Your Password: <input type="password" name="pass2" id="pass2" placeholder="Must match password" required> <br>
+    			<br>
+				<h2>Enter Credit Card Information</h2>   
+				<br>
+				Enter Credit Card Number: <input type="number" name="credit" id="credit" placeholder="#XXXX-XXXX-XXXX-XXXX"> <br> <br>
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				<input type="submit" value="Submit Information" onclick="return same()"/>
+				</form>
+         
             </li>
 
         </ul>
