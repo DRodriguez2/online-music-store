@@ -113,8 +113,8 @@
                 <form action="/login" method="post">
    					 User name: <input type="text" name="username" id="username" placeholder="username" required> <br><br>
     				Password: <input type="text" name="password" id="password" placeholder="password" required> <br><br>
-					<input type="hidden" id = "" name ""> <!-- have to pass hidden value -->
-					<input type="submit" value="Log in" onclick=""/>
+					<<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					<input type="submit" value="Log In"/>
 				</form>
             </li>
 

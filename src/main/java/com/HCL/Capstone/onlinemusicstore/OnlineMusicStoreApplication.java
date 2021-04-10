@@ -124,8 +124,8 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 		musicRepo.save(ab1);
 		musicRepo.save(ab2);
 		musicRepo.saveAll(songs);
-		User user = new User("user", "password", "ROLE_USER", 1111);
-		User admin = new User("admin", "password", "ROLE_ADMIN", 1111);
+		User user = new User("user", "password", "ROLE_USER", (long) 1111);
+		User admin = new User("admin", "password", "ROLE_ADMIN", (long) 1111);
 		
 		userService.createUser(user);
 		userService.createUser(admin);
