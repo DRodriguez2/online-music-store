@@ -27,7 +27,7 @@
           <a class="nav-link" href="/services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="accessory">Accessories</a>
+          <a class="nav-link" href="/accessory">Accessories</a>
         </li>
       </ul>
     </div>
@@ -35,6 +35,8 @@
   		<ul class="navbar-nav">
   		<%boolean admin = false;
   		boolean loggedIn = true;%>
+  		
+  		
   		<%if(admin) 
   		{%>
   			<li class="nav-item active">

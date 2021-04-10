@@ -22,6 +22,7 @@
 		<form action="/music/albums" method="GET">
 			<button type="submit" class="btn btn-primary">Albums</button>
 		</form>
+		
 	</div>
 	<div>
 		<table class="table">

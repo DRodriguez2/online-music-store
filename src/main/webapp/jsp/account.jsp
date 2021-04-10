@@ -49,29 +49,16 @@
 			<!-- here should go some titles... -->
 
 			<tr>
-				<th>Product id</th>
-				<th>Name</th>
-				<th>Category</th>
-				<th>Price</th>
-				<th>Actions</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Credit Card</th>
 			</tr>
+			
+			
+			<tr>
+				<th><% request.getAttribute("user");%></th>
 
-			
-			
-			<c:forEach items="${searchResults}" var="product">
-				<tr>
-					<td><c:out value="${product.getId()}" /></td>
-					<td><c:out value="${product.getName()}" /></td>
-					<td><c:out value="${product.getCategory()}" /></td>
-					<td><c:out value="${product.getPrice()}" /></td>
-					<td><form action="/admin/task">
-							<button type="submit" class="btn btn-primary">More Info/Actions</button>
-							<input type="hidden" name="productId" value="${product.getId()}" />
-							<input type="hidden" name="category" value="${product.getCategory()}" />
-						</form>
-					</td>
-				</tr>
-			</c:forEach>
+			</tr>
 			
 		</table>
     	</div>
