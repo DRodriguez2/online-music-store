@@ -3,6 +3,7 @@ package com.HCL.Capstone.onlinemusicstore.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -16,7 +17,7 @@ import lombok.Getter;
 @Getter
 public class Album extends Music{
 	
-	@OneToMany(mappedBy="album")
+	@OneToMany(mappedBy="album", cascade = {CascadeType.ALL})
 	List<Song> songs = new ArrayList<>();
 	
 	public Album() {}

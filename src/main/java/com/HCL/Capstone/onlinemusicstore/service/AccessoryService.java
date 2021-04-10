@@ -22,6 +22,17 @@ public class AccessoryService {
 	@Autowired
 	 private AccessoryRepository accessoryRepository;
 	
+	
+	public Accessory findAccessoryById(Long id) {
+		Optional<Accessory> accessory = accessoryRepository.findById(id);
+		if(accessory.isPresent()) return accessory.get();
+		else return null;
+	}
+
+	public List<Accessory> getAllAccessories() {
+		return accessoryRepository.findAll();
+	}
+	
     public Iterable<Accessory> GetAllAccessories()
     {
         return accessoryRepository.findAll();

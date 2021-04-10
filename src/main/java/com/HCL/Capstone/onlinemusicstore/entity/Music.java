@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
@@ -14,7 +15,7 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public abstract class Music extends Product{
+public class Music extends Product{
 	
 	@Enumerated(EnumType.STRING)
 	private Platform platform;
@@ -23,6 +24,7 @@ public abstract class Music extends Product{
 	private MusicType type;
 	
 	@NotEmpty(message="Value required")
+	@Pattern(regexp="\\A(?!\\s*\\Z).+", message="Value required")
 	private String artist;
 	
 	/**
