@@ -37,6 +37,11 @@ public class DefaultController {
 		return "instruments"; 
 	}
 	
+	@GetMapping("/accessory")
+	public String accessory() {
+		return "accessory"; 
+	}
+	
 	@GetMapping("/services")
 	public String services() {
 		return "services"; 
