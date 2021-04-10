@@ -18,8 +18,20 @@ public class InstrumentService {
 	@Autowired
 	 private InstrumentRepository instrumentRepository;
 	
-	
 
+
+	public Instrument getInstrumentById(Long id) {
+		Optional<Instrument> ins = instrumentRepository.findById(id);
+		if(ins.isPresent()) return ins.get();
+		//typically I throw a custom exception here
+		else return null;
+	}
+	
+    public List<Instrument> getAllInstruments()
+    {
+        return instrumentRepository.findAll();
+    }
+	
     public Iterable<Instrument> GetAllInstruments()
     {
         return instrumentRepository.findAll();
