@@ -19,14 +19,13 @@ public class UserController {
 	public String registerUser(@RequestParam String uname, @RequestParam String pass2, @RequestParam Integer credit) {
 		
 		User newU = new User(); 
-		
-		
+
 		newU.setUsername(uname);
 		newU.setPassword(pass2);
 		newU.setCreditCard(credit);
 		userSer.createUser(newU);
 		
-		return "home2";
+		return "login";
 
 	}
 	

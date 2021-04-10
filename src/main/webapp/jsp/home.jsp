@@ -30,7 +30,7 @@
 
 </head>
 <body>
-  
+   <%@ include file = "navbar.jsp" %>
   <h1>Music Store</h1>
 	<p>The Music Store built for music lovers like us</p>
   <div class="container">

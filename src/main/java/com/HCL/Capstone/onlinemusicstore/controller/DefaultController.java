@@ -24,7 +24,7 @@ public class DefaultController {
 	
 	@GetMapping("/home2")
 	public String home() {
-		return "home"; 
+		return "home2"; 
 	}
 	
 	@GetMapping("/login")

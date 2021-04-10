@@ -4,7 +4,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Log-in</title>
+<title>Register User</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -96,7 +96,7 @@
               	<h2>Enter User Information</h2>
               	<br>
     			Create a Username: <input type="text" name="uname" id="uname" placeholder="Username" required> <br><br>
-    			Create a Password: <input type="password" name="pass1" id="pass10" placeholder="Password" required> <br><br>
+    			Create a Password: <input type="password" name="pass1" id="pass1" placeholder="Password" required> <br><br>
     			Retype Your Password: <input type="password" name="pass2" id="pass2" placeholder="Must match password" required> <br>
     			<br>
 				<h2>Enter Credit Card Information</h2>   

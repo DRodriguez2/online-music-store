@@ -80,9 +80,9 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <form action="/login" method="post">
-   					 User name: <input type="text" name="username" id="username" placeholder="username" required> <br><br>
+   					User name: <input type="text" name="username" id="username" placeholder="username" required> <br><br>
     				Password: <input type="text" name="password" id="password" placeholder="password" required> <br><br>
-					<<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<input type="submit" value="Log In"/>
 				</form>
             </li>
