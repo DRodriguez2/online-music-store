@@ -25,7 +25,7 @@ public class InstrumentController {
 	private InstrumentService instrumentService;
 	
 	@RequestMapping(value = "/DeleteInstrument", method = RequestMethod.POST)
-	public String deleteInstrument(ModelMap model,@RequestParam String type,@RequestParam String name)throws ProductNotFoundException {
+	public String deleteInstrument(ModelMap model,@RequestParam String name)throws ProductNotFoundException {
 		 
 		Instrument instrument = instrumentService.GetInstrumentByName(name);
 		instrumentService.DeleteInstrument(instrument);
@@ -35,11 +35,11 @@ public class InstrumentController {
 	
 	
 	@RequestMapping(value = "/UpdateInstrument", method = RequestMethod.POST)
-	public String updateInstrument(ModelMap model, @RequestParam Category category, @RequestParam String name, 
-			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) throws ProductNotFoundException{
+	public String updateInstrument(ModelMap model, @RequestParam String name, 
+			 @RequestParam String type, @RequestParam String brand,@RequestParam Double price) throws ProductNotFoundException{
 		
 		Instrument object = instrumentService.GetInstrumentByName(name);
-		object = new Instrument(name, category, price, brand, description);
+		object = new Instrument(name, Category.INSTRUMENT, price, type, brand);
 		instrumentService.UpdateInstrument(object);
 		return "taskresult";
 		
@@ -49,10 +49,11 @@ public class InstrumentController {
 	
 	
 	@RequestMapping(value = "/AddInstrument", method = RequestMethod.POST)
-	public String addInstrument(ModelMap model, @RequestParam Category category, @RequestParam String name, 
-			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) {
+	public String addInstrument(ModelMap model, @RequestParam String name, @RequestParam String type,
+			@RequestParam String brand, @RequestParam Double price) {
 		
-		Instrument object = new Instrument(name, category, price, brand, description);
+										//String name, Category category, Double price, String type, String brand
+		Instrument object = new Instrument(name, Category.INSTRUMENT, price, type, brand);
 		instrumentService.UpdateInstrument(object);
 		return "taskresult";
 	}

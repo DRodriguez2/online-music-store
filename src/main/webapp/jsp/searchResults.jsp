@@ -14,10 +14,10 @@ table, th, td {
 <table style="float:left">
    <c:forEach items="${product}" var="product" varStatus="count">
     <tr id="${count.index}">
-        <td>${product.type}</td>
-        <td>${product.name}</td>
-        <td>${product.category}</td>      
-        <td>${product.price}</td>
+        <td>${product.getType()}</td>
+        <td>${product.getName()}</td>
+        <td>${product.getCategory()}</td>      
+        <td>${product.getPrice()}</td>
     </tr>
   </c:forEach>
 </table>

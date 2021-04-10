@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
   
-  <title>Instrument Page</title>
+  <title>Accessory Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,10 +35,11 @@
   
   <br><br>
   <p></p>
-  <h2 class="text-center bg-info"> Want to see all the instruments we have?</h2>
-
-  <img src= "/images/piano.jpg" width="500" height="300" style="width:50%;">
-  <p class="text-center"> We have many Instruments in our shop</p>
+  <h2 class="text-center bg-info"> Need a new way to listen to your favorite hits?</h2>
+  <p class="text-center bg-info"> We have you covered!</p>
+    <p></p>
+  <img src= "/images/music3" width="500" height="300" style="width:50%;">
+  <p class="text-center"> We have many Accessories in our shop</p>
   <p class="text-center">You may search by typing what you are looking for</p>
 
   <div class="container">
@@ -47,7 +48,7 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <h3 class="text-center">Search</h3>
-                <form action="SearchInstrument" class="text-center" method="POST">
+                <form action="SearchAccessory" class="text-center" method="POST">
                     <input type="text" placeholder="Search by name or brand" name="search">
                     <br><br>
                     <input type="submit" value="Submit">
@@ -66,8 +67,8 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <h3 class="text-center">Click and view all that we have in stock</h3>
-                <form id="ViewInstrument" action="ViewInstrument" class="text-center" method="GET">
-                    <button >View all of our Wonderful Instruments</button>
+                <form id="ViewAccessory" action="ViewAccessory" class="text-center" method="GET">
+                    <button >View all of our Accessories</button>
                 </form>
             </li>
         </ul>

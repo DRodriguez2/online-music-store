@@ -25,7 +25,7 @@ public class ServicesController {
 	private ServicesService servicesService;
 	
 	@RequestMapping(value = "/DeleteServices", method = RequestMethod.POST)
-	public String deleteServices(ModelMap model,@RequestParam String type,@RequestParam String name) throws ProductNotFoundException{
+	public String deleteServices(ModelMap model,@RequestParam String name) throws ProductNotFoundException{
 		 
 		Services services = servicesService.GetServiceByName(name);
 		servicesService.DeleteServices(services);
@@ -35,11 +35,11 @@ public class ServicesController {
 	
 	
 	@RequestMapping(value = "/UpdateServices", method = RequestMethod.POST)
-	public String updateServices(ModelMap model, @RequestParam Category category, @RequestParam String name, 
+	public String updateServices(ModelMap model, @RequestParam String name, 
 			 @RequestParam String description,@RequestParam Double price) throws ProductNotFoundException{
 		
 		Services object = servicesService.GetServiceByName(name);
-		object = new Services(name, category, price, description);
+		object = new Services(name, Category.SERVICE, price, description);
 		servicesService.UpdateServices(object);
 		return "taskresult";
 		
@@ -48,10 +48,10 @@ public class ServicesController {
 	
 	
 	@RequestMapping(value = "/AddServices", method = RequestMethod.POST)
-	public String addServices(ModelMap model, @RequestParam Category category, @RequestParam String name, 
+	public String addServices(ModelMap model, @RequestParam String name, 
 			 @RequestParam String description,@RequestParam Double price) {
 		
-		Services object = new Services(name, category, price, description);
+		Services object = new Services(name, Category.SERVICE, price, description);
 		servicesService.UpdateServices(object);
 		return "taskresult";
 	}
