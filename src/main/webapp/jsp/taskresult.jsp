@@ -36,23 +36,7 @@
   <h3 class="text-center">Task result successful</h3>
 <p></p>
 <h4>You may perform a new task or return home</h4>
-<form id="AdminTask" action="AdminTask" method="post">
-  <label>Entity: </label>
-  <select name="entity">
-  <option value="Music">Music</option>
-  <option value="Instrument">Instrument</option>
-  <option value="Services">Services</option>
-  <option value="Accessory">Accessory</option>
-  <option value="Album">Album</option>
-</select>
-<label>Action: </label>
-  <select name="action">
-  <option value="add">Add</option>
-  <option value="update">Update</option>
-  <option value="delete">Delete</option>
-</select>
-  <button>Submit</button>
-</form>
+
   
 	<!-- Footer -->
 	<footer class="page-footer font-small indigo">
