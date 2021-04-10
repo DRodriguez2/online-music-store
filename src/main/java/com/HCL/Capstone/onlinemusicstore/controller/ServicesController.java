@@ -72,6 +72,6 @@ public class ServicesController {
 		Iterable<Services> list = new ArrayList<>();
 		list = servicesService.GetAllServices();
 		model.addAttribute("searchResults", list);
-		return "adminAction";
+		return "searchResults";
 	}
 }

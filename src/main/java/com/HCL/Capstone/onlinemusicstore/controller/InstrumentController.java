@@ -36,10 +36,10 @@ public class InstrumentController {
 	
 	@RequestMapping(value = "/UpdateInstrument", method = RequestMethod.POST)
 	public String updateInstrument(ModelMap model, @RequestParam String name, 
-			 @RequestParam String description, @RequestParam String brand,@RequestParam Double price) throws ProductNotFoundException{
+			 @RequestParam String type, @RequestParam String brand,@RequestParam Double price) throws ProductNotFoundException{
 		
 		Instrument object = instrumentService.GetInstrumentByName(name);
-		object = new Instrument(name, Category.INSTRUMENT, price, brand, description);
+		object = new Instrument(name, Category.INSTRUMENT, price, type, brand);
 		instrumentService.UpdateInstrument(object);
 		return "taskresult";
 		
@@ -49,10 +49,11 @@ public class InstrumentController {
 	
 	
 	@RequestMapping(value = "/AddInstrument", method = RequestMethod.POST)
-	public String addInstrument(ModelMap model, @RequestParam String name, @RequestParam String description,
+	public String addInstrument(ModelMap model, @RequestParam String name, @RequestParam String type,
 			@RequestParam String brand, @RequestParam Double price) {
 		
-		Instrument object = new Instrument(name, Category.INSTRUMENT, price, brand, description);
+										//String name, Category category, Double price, String type, String brand
+		Instrument object = new Instrument(name, Category.INSTRUMENT, price, type, brand);
 		instrumentService.UpdateInstrument(object);
 		return "taskresult";
 	}
