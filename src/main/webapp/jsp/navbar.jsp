@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
   		<%boolean admin = false;
-  		boolean loggedIn = true;%>
+  		boolean loggedIn = false;%>
   		
   		
   		<%if(admin) 
@@ -48,6 +48,9 @@
   		{%>
   			<li class="nav-item active">
       			<a class="nav-link" href="/login">Login</a>
+    		</li>
+    		<li class="nav-item active">
+      			<a class="nav-link" href="/register">Register</a>
     		</li>
   			<%}
   		%>
