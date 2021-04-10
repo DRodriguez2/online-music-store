@@ -51,6 +51,9 @@
                     <input type="text" placeholder="Search by name or brand" name="search">
                     <br><br>
                     <input type="submit" value="Submit">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                    
+                    </form>
             </li>
         </ul>
       </div>
@@ -64,7 +67,7 @@
       <div class="col">
         <ul class="list-group">
             <li class="list-group-item">
-                <h3>Click and view all that we offer</h3>
+                <h3 class="text-center">Click and view all that we offer</h3>
                 <form id="ViewServices" action="ViewServices" class="text-center" method="GET">
                     <button >View all of our Wonderful Services</button>
                 </form>
