@@ -3,6 +3,7 @@ package com.HCL.Capstone.onlinemusicstore.entity;
 import javax.persistence.Entity;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 
@@ -14,9 +15,11 @@ import lombok.Setter;
 public class Instrument extends Product{
 	
 	@NotEmpty(message="Value required")
+	@Pattern(regexp="\\A(?!\\s*\\Z).+", message="Value required")
 	private String type;
 	
 	@NotEmpty(message="Value required")
+	@Pattern(regexp="\\A(?!\\s*\\Z).+", message="Value required")
 	private String brand;
 	
 	public Instrument() {}

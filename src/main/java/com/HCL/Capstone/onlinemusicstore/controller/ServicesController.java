@@ -62,8 +62,8 @@ public class ServicesController {
 		List <Services> results = new ArrayList<Services>();
 		
 		results = servicesService.findAllByNameContainsIgnoreCase(search);
-		model.addAttribute("searchResults", results);
-		return "searchResults";
+		model.addAttribute("serviceResults", results);
+		return "serviceResults";
 	}
 	
 	@RequestMapping(value = "/ViewServices", method = RequestMethod.GET)
@@ -71,7 +71,7 @@ public class ServicesController {
 		
 		Iterable<Services> list = new ArrayList<>();
 		list = servicesService.GetAllServices();
-		model.addAttribute("searchResults", list);
-		return "searchResults";
+		model.addAttribute("serviceResults", list);
+		return "serviceResults";
 	}
 }

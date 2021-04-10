@@ -42,6 +42,7 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
 		Product p1 = new Product("Song 1", Category.MUSIC, 1.99);
 		Product p2 = new Product("Headphones", Category.ACCESSORIES, 59.99);
 								
@@ -105,9 +106,6 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 
 		List<Song> songs = Arrays.asList(so1, so2, so3, so4, so5, so6, so7, so8, so9, so10, so11, so12,
 				so13, so14, so15, so16, so17, so18, so19, so20, so21, so22, so23, so24, so25, so26);
-
-		productRepo.save(p1);
-		productRepo.save(p2);
 		
 		Instrument i1  = new Instrument("Fender Guitar", Category.INSTRUMENT, 299.00, "Percussion", "Fender");
 		Instrument i2  = new Instrument("Yamaha Guitar", Category.INSTRUMENT, 199.00, "Percussion", "Yamaha");

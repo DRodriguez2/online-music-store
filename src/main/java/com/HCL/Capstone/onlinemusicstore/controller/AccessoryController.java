@@ -79,8 +79,8 @@ public class AccessoryController {
 		for(Accessory i : brandResults) {
 			results.add(i);
 		}
-		model.addAttribute("searchResults", results);
-		return "searchResults";
+		model.addAttribute("accessoryResults", results);
+		return "accessoryResults";
 	}
 	
 	@RequestMapping(value = "/ViewAccessory", method = RequestMethod.GET)
@@ -88,7 +88,7 @@ public class AccessoryController {
 		
 		Iterable<Accessory> list = new ArrayList<>();
 		list = accessoryService.GetAllAccessories();
-		model.addAttribute("searchResults", list);
-		return "searchResults";
+		model.addAttribute("accessoryResults", list);
+		return "accessoryResults";
 	}
 }
