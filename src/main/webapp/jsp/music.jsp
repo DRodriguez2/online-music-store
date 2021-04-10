@@ -16,30 +16,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.2.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-
+	<%@ include file = "navbar.jsp" %>
+	<style>
+        img{
+          display:block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        body{
+          background-color: aliceblue;
+        }
+      </style>
+	
 </head>
 <body>
 
-  
-  <%@ include file = "navbar.jsp" %>
-  
-  <form action="#">
-  	<input type="text" placeholder="Search.." name="search">
-  	<br><br>
-  	<input type="radio" id="title" name="title" value="title" style="margin-left: 5px" checked>
-  		<label for="title">By Title</label>
-  	<input type="radio" id="artist" name="artist" value="artist" style="margin-left: 5px">
-  		<label for="artist">By Artist  </label>
-  	<input type="radio" id="style" name="style" value="style" style="margin-left: 5px">
-  		<label for="style">By Style  </label>
-  	<input type="radio" id="format" name="format" value="format" style="margin-left: 5px">
-  		<label for="format">By Format  </label>
-  	<input type="radio" id="price" name="price" value="price" style="margin-left: 5px">
-  		<label for="price">By Price  </label>
-  	<br>
-  	<input type="submit" value="Submit">
-   </form> 
   <br>
 	<%@ include file = "testMusicTable.jsp" %>
 

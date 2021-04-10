@@ -7,6 +7,7 @@
 
 <html lang="en">
 <head>
+<%@ include file = "navbar.jsp" %>
 
 <title>Homepage</title>
 <meta charset="utf-8">
