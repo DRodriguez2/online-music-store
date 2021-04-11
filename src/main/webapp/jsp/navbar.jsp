@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,12 +34,9 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
-  		<%
-  		boolean admin = false;
-  		%>
   		
   		
-  		<%if(admin) 
+  		<%if(request.getSession().getAttribute("admin") != null) 
   		{%>
   			<li class="nav-item active">
 			<a class="nav-link" href="/admin">Admin</a>

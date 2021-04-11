@@ -35,9 +35,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				//.antMatchers("/**").permitAll()
-				.antMatchers("/register").hasRole("ADMIN")
-				//.antMatchers("/admin").hasRole("ADMIN")
-				.antMatchers("/cart").hasAnyRole("USER", "ADMIN").and().formLogin()
+				.antMatchers("/admin").hasRole("ADMIN")
+				.antMatchers("/account").hasAnyRole("USER", "ADMIN").and().formLogin()
 				.loginPage("/login")
 				.failureUrl("/login?error=true").permitAll()
 				.successHandler(new SavedRequestAwareAuthenticationSuccessHandler() {
@@ -46,7 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 							Authentication auth) throws IOException, ServletException {
 						MyUserDetails userDetails = (MyUserDetails) auth.getPrincipal();
 						User user = userDetails.getUser();
-
+						
+						if(user.getRole().equals("ROLE_ADMIN")) {
+							request.getSession().setAttribute("admin", user);
+						}
 						request.getSession().setAttribute("user", user);
 						request.getSession().setAttribute("cart", new ArrayList<Product>());
 						super.onAuthenticationSuccess(request, response, auth);

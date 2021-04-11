@@ -120,11 +120,11 @@ public class CartController {
 		} else if(view.equals("accessoryResults")) {
 			List<Accessory> accessoryResults = new ArrayList<>();
 			for(int i = 0; i < table.size(); i++) {
-				accessoryResults.add(as.findAccessoryById(Long.parseLong(table.get(i).split("=")[1])));
+				if(i % 4 == 0) {
+					accessoryResults.add(as.findAccessoryById(Long.parseLong(table.get(i).split("=")[1])));
+				}		
 			}
-			model.addAttribute("accesoryResults", accessoryResults);
-		}  else if(view.equals("")) {
-			
+			model.addAttribute("accessoryResults", accessoryResults);
 		}  else if(view.equals("instrumentResults")) {
 			List<Instrument> instrumentResults = new ArrayList<>();
 			for(int i = 0; i < table.size(); i++) {
@@ -147,7 +147,7 @@ public class CartController {
 					}
 				}		
 			}
-			model.addAttribute("musictResults", musicResults);
+			model.addAttribute("searchResults", musicResults);
 		}else view = "theres a problem";
 		logger.info("@@@@@@@@@@@@@@@CART: " + req.getSession().getAttribute("cart"));
 		return view;

@@ -36,7 +36,6 @@
 </head>
 <body>
 
-	<%@ include file="navbar.jsp"%>
 	<div class="container mt-3">
 		<h1>ADMIN PAGE</h1>
 	</div>
