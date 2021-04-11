@@ -39,7 +39,7 @@ public class CartController {
 	
 	@GetMapping()
 	public String showCart() {
-		return "cart";
+		return "cartView";
 	}
 	
 //	@PostMapping("/add")

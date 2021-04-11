@@ -21,14 +21,25 @@ public class DefaultController {
 	
 	@GetMapping()
 	public String defaultPath(HttpServletRequest req) {
-		List<Product> cart = new ArrayList<>();
-		req.getSession().setAttribute("cart", cart);
-		
-		//checking if user object is stored in session after login
+		if(req.getSession().getAttribute("cart") == null) {
+			List<Product> cart = new ArrayList<>();
+			req.getSession().setAttribute("cart", cart);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@CREATING CART");
+		}		
+    //checking if user object is stored in session after login
 		//logger.info(req.getSession().getAttribute("user").toString());
 		return "home"; 
 	}
 	
+	@GetMapping("/home")
+	public String home(HttpServletRequest req) {
+		if(req.getSession().getAttribute("cart") == null) {
+			List<Product> cart = new ArrayList<>();
+			req.getSession().setAttribute("cart", cart);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@CREATING CART");
+		}
+		return "home"; 
+  }
 	@GetMapping("/home2")
 	public String home() {
 		return "home2"; 
