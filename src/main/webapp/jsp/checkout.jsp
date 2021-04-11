@@ -28,7 +28,7 @@
       }
     </style>
 <meta charset="ISO-8859-1">
-<title>Admin Task</title>
+<title>Checkout</title>
 </head>
 <body>
 	<div class="card">

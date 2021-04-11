@@ -29,7 +29,7 @@
     </style>
 
 <meta charset="ISO-8859-1">
-<title>Admin Task</title>
+<title>Cart</title>
 </head>
 <body>
 	<div class="card justify-content-center">
