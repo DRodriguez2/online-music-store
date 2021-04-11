@@ -1,8 +1,5 @@
 package com.HCL.Capstone.onlinemusicstore;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -13,12 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.HCL.Capstone.onlinemusicstore.entity.Album;
-import com.HCL.Capstone.onlinemusicstore.entity.Music;
-import com.HCL.Capstone.onlinemusicstore.entity.Song;
-import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
 import com.HCL.Capstone.onlinemusicstore.exceptions.MusicNotFoundException;
-import com.HCL.Capstone.onlinemusicstore.exceptions.NoAlbumsInDatabaseException;
-import com.HCL.Capstone.onlinemusicstore.exceptions.NoSongsInDatabaseException;
 import com.HCL.Capstone.onlinemusicstore.service.MusicService;
 
 @SpringBootTest(classes = OnlineMusicStoreApplication.class)

@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +15,7 @@ import com.HCL.Capstone.onlinemusicstore.entity.Product;
 @RequestMapping("/")
 public class DefaultController {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	//private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@GetMapping()
 	public String defaultPath(HttpServletRequest req) {
@@ -45,10 +43,6 @@ public class DefaultController {
 		return "home2"; 
 	}
 	
-	@GetMapping("/login")
-	public String login() {
-		return "login"; 
-	}
 	
 	@GetMapping("/instruments")
 	public String instruments() {

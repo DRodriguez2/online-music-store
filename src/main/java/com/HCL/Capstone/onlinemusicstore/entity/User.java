@@ -1,12 +1,8 @@
 package com.HCL.Capstone.onlinemusicstore.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
@@ -29,13 +25,7 @@ public class User {
 	
 	//Multiple roles should be separated by a comma
 	@NotEmpty(message = "Value Required")
-	private String role; //TODO: needs a way to assign role with spring sec
-	
-//	@OneToOne
-//	@JoinTable(name="USER_CART", 
-//	   joinColumns = @JoinColumn(name="USER_ID"),
-//	   inverseJoinColumns = @JoinColumn(name="CART_ID"))
-//	Integer cartID; 
+	private String role; 
 	
 	
 	private Integer creditCard; 
