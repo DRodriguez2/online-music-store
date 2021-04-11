@@ -50,11 +50,11 @@
 							<div class="row">
 								<div class="col">
 									<label>Price</label>
-									<input class="form-control" name="price" required value="${editInstrument.getPrice()}" />
+									<input class="form-control" name="price" required value="${editInstrument.getPrice()}" readonly/>
 								</div>
 								<div class="col">
 									<label>Brand</label>
-									<input class="form-control" name="brand" required value="${editInstrument.getBrand()}" />
+									<input class="form-control" name="brand" required value="${editInstrument.getBrand()}"/>
 								</div>
 							</div>
 

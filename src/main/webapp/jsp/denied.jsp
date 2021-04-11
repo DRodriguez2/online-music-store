@@ -10,9 +10,17 @@
 <link rel="stylesheet" href="/home.css">
 
 <body>
+	<%@ include file="navbar.jsp"%>
+	<div class="row mt-5"></div>
+	<div class="row mt-5"></div>
 	<div class="container p-3 my-3 bg-dark text-white">
-		<h2>403 Access Denied</h2>
-		<h4>Please Login Again <a href="/login">login</a></h4>
+		<h2 style="text-align: center">ACCESS DENIED</h2>
+		<div class="row mt-4" ></div>
+		<h4 style="text-align: center">Please contact system administrator for details</h4>
+		<div class="row mt-4" ></div>
+		<h4 style="text-align: center"><a href="/home">Home</a></h4>
+		<div class="row mt-4" ></div>
+		<h4 style="text-align: center"><a href="/login">Login</a></h4>
 	</div>
 </body>
 </html>
