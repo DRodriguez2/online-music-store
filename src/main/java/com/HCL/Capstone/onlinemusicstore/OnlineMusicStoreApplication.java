@@ -124,7 +124,7 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 		User admin = new User("admin", "password", "ROLE_ADMIN", 1111);
 		
 		userService.createUser(user);
-		userService.createUser(admin);
+		userService.createAdmin(admin);
 		
 		
 	}

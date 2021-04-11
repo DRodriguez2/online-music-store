@@ -31,6 +31,12 @@ public class UserService {
 		userRepo.save(newUser);	
 	}
 	
+	public void createAdmin(User admin) {
+		admin.setRole("ROLE_ADMIN");
+		admin.setPassword(encoder.encode(admin.getPassword()));
+		userRepo.save(admin);
+	}
+	
 	
 
 }

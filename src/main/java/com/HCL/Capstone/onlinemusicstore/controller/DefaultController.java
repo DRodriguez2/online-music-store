@@ -25,7 +25,7 @@ public class DefaultController {
 		req.getSession().setAttribute("cart", cart);
 		
 		//checking if user object is stored in session after login
-		logger.info(req.getSession().getAttribute("user").toString());
+		//logger.info(req.getSession().getAttribute("user").toString());
 		return "home"; 
 	}
 	

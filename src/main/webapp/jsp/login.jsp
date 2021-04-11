@@ -85,8 +85,8 @@
     				Password: <input type="password" name="password" id="password" placeholder="password" required> <br><br>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<input type="submit" value="Log In"/>
-					<c:out value="${result} hereeee"/>
 				</form>
+				<div class="pt-2">${result} here</div>
             </li>
 
         </ul>
