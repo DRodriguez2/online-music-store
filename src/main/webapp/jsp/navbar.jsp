@@ -19,7 +19,7 @@
           <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="music">Music</a>
+          <a class="nav-link" href="/music">Music</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/instruments">Instruments</a>
