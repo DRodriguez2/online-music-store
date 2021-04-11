@@ -50,7 +50,7 @@
 							<div class="row">
 								<div class="col">
 									<label>Price</label>
-									<input class="form-control" name="price" required value="${editService.getPrice()}" />
+									<input class="form-control" name="price" required value="${editService.getPrice()}" readonly/>
 								</div>
 							</div>
 

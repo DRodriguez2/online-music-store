@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -12,12 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
-import com.HCL.Capstone.onlinemusicstore.exceptions.AccessoryNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
-import com.HCL.Capstone.onlinemusicstore.service.*;
+import com.HCL.Capstone.onlinemusicstore.service.AccessoryService;
 
 
 

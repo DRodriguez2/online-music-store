@@ -14,23 +14,35 @@ import com.HCL.Capstone.onlinemusicstore.entity.Product;
 @Controller
 @RequestMapping("/")
 public class DefaultController {
+
+	//private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@GetMapping()
 	public String defaultPath(HttpServletRequest req) {
-		List<Product> cart = new ArrayList<>();
-		req.getSession().setAttribute("cart", cart);
+		if(req.getSession().getAttribute("cart") == null) {
+			List<Product> cart = new ArrayList<>();
+			req.getSession().setAttribute("cart", cart);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@CREATING CART");
+		}		
+    //checking if user object is stored in session after login
+		//logger.info(req.getSession().getAttribute("user").toString());
 		return "home"; 
 	}
 	
 	@GetMapping("/home")
-	public String home() {
+	public String home(HttpServletRequest req) {
+		if(req.getSession().getAttribute("cart") == null) {
+			List<Product> cart = new ArrayList<>();
+			req.getSession().setAttribute("cart", cart);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@CREATING CART");
+		}
 		return "home"; 
+  }
+	@GetMapping("/home2")
+	public String home() {
+		return "home2"; 
 	}
 	
-	@GetMapping("/login")
-	public String login() {
-		return "login"; 
-	}
 	
 	@GetMapping("/instruments")
 	public String instruments() {
@@ -50,5 +62,10 @@ public class DefaultController {
 	@GetMapping("/register")
 	public String register() {
 		return "register"; 
+	}
+	
+	@GetMapping("/denied")
+	public String accessDenied() {
+		return "denied"; 
 	}
 }

@@ -16,19 +16,20 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/login")
 public class LoginController {
 	
-	@GetMapping("/login")
+	//private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@GetMapping()
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
 
 		String result = "";
-		if (error != null)
-			result = "<SPAN style='color:#F62020'>Invalid Login</SPAN>";
-		else if (logout != null)
-			result = "<SPAN style='color:#50F227'>Logout Successful</SPAN>";
+		if (error != null) result = "<SPAN style='color:#F62020'>Invalid Login</SPAN>";
+
+		else if (logout != null) result = "<SPAN style='color:#50F227'>Logout Successful</SPAN>";
 
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);
-		mv.setViewName("account");
+		mv.setViewName("login");
 		return mv;
 	}
 	

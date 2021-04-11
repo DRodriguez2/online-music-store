@@ -19,6 +19,7 @@ import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 import com.HCL.Capstone.onlinemusicstore.entity.Instrument;
 import com.HCL.Capstone.onlinemusicstore.entity.Product;
 import com.HCL.Capstone.onlinemusicstore.entity.Services;
+import com.HCL.Capstone.onlinemusicstore.entity.User;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.service.AccessoryService;
 import com.HCL.Capstone.onlinemusicstore.service.InstrumentService;
@@ -38,22 +39,62 @@ public class CartController {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@GetMapping()
-	public String showCart() {
-		return "cart";
+	public String showCart(HttpServletRequest req, Model model) {
+		
+		@SuppressWarnings("unchecked")
+		List<Product> cart = (List<Product>) req.getSession().getAttribute("cart");
+		logger.info("showing cart view with cart: " + cart);
+		model.addAttribute("cart", cart);
+
+		if(cart.size() > 0) {
+			double total = cart.stream().map(p -> p.getPrice()).reduce(0.0, (p1, p2) -> p1 + p2);
+			total = Math.round(total * 100.0) / 100.0;
+			model.addAttribute("total", total);
+		}
+		
+		return "cartView";
 	}
 	
-//	@PostMapping("/add")
-//	public String addToCart (@RequestParam Long id, @RequestParam String view, HttpServletRequest req) throws ProductNotFoundException {
-//		
-//		//add Product to the cart by update session object
-//		@SuppressWarnings("unchecked")
-//		List<Product> cart = (List<Product>) req.getSession().getAttribute("cart");
-//		cart.add(ps.getProductById(id));
-//		req.getSession().setAttribute("cart", cart);
-//
-//		return view;
-//	}
+	@PostMapping("/deleteItem")
+	public String deleteItemFromCart(Model model, @RequestParam Long productId, HttpServletRequest req) throws ProductNotFoundException {
+		@SuppressWarnings("unchecked")
+		List<Product> cart = (List<Product>) req.getSession().getAttribute("cart");
+		for(int i = 0; i < cart.size(); i++) {
+			if(cart.get(i).getId() == productId) {
+				cart.remove(i);
+				break;
+			}
+		}
+		if(cart.size() > 0) {
+			double total = cart.stream().map(p -> p.getPrice()).reduce(0.0, (p1, p2) -> p1 + p2);
+			total = Math.round(total * 100.0) / 100.0;
+			model.addAttribute("total", total);
+		}
+		req.getSession().setAttribute("cart", cart);
+		model.addAttribute("cart", cart);
+		return "cartView";
+	}
 	
+	@GetMapping("/checkout")
+	public String checkout(Model model, @RequestParam Double total, HttpServletRequest req) {
+		User user = (User)req.getSession().getAttribute("user");
+		model.addAttribute("total", total);
+		model.addAttribute("checkingOut", "true");
+		model.addAttribute("cardnumber", user.getCreditCard());
+		return "cartView";
+	}
+	
+	@PostMapping("/checkout")
+	public String submitCheckout(Model model, HttpServletRequest req) {
+		model.addAttribute("result", "Checkout Successful");
+		@SuppressWarnings("unchecked")
+		List<Product> cart = (List<Product>)req.getSession().getAttribute("cart");
+		//clear the cart when the user checks out
+		cart.removeAll(cart);
+		req.getSession().setAttribute("cart", cart);
+		return "cartView";
+	}
+
 	@PostMapping("/add")
 	public String addToCart (@RequestParam Long id, @RequestParam List<String> table, @RequestParam String view,  Model model, HttpServletRequest req) throws ProductNotFoundException {
 		
