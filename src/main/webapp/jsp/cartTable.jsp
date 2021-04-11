@@ -22,48 +22,80 @@
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
 	rel="stylesheet" />
+	    <style>
+      body{
+        background-color: aliceblue;
+      }
+    </style>
 
 <meta charset="ISO-8859-1">
 <title>Admin Task</title>
 </head>
 <body>
-
-
-	<div class="container mt-3">
-		<h3>Accessories</h3>
-		<div class="row mt-3">
-			<div class="col">
-				<form action="/admin/addAccessory">
-					<button type="submit" class="btn btn-secondary">Add new accessory</button>
-				</form>
+	<div class="card justify-content-center">
+		<div class="card-body justify-content-center">
+			<div class="row justify-content-center">
+				<h4 class="card-title" style="text-align: center">Your Cart</h4>
 			</div>
+			<div class="row">
+				<div class="container mt-3" style="height: 300px; overflow: auto">
+					<c:if test="${cart.size() == 0}">
+						<h4 style="text-align: center">Empty Cart</h4>
+						<div class="row mt-5">
+							<h4 class="card-title" style="text-align: center; color:green">
+								<c:out value="${result}" />
+							</h4>
+						</div>
+					</c:if>
+					<table class="table table-sm table-bordered">
+
+						<c:forEach items="${cart}" var="product">
+							<tr>
+								<td style="border-left: none; border-right: none"><c:out
+										value="${product.getName()}" /></td>
+								<td style="border-left: none; border-right: none"><c:out
+										value="$${product.getPrice()}" /></td>
+								<td style="border-left: none; border-right: none"><c:out
+										value="${product.getCategory()}" /></td>
+								<td style="border-left: none; border-right: none">
+									<form action="/cart/deleteItem" method="POST">
+										<button type="submit" class="btn btn-danger">Remove</button>
+										<input type="hidden" name="productId"
+											value="${product.getId()}" /> <input type="hidden"
+											name="${_csrf.parameterName}" value="${_csrf.token}" />
+									</form>
+								</td>
+							</tr>
+						</c:forEach>
+
+					</table>
+
+				</div>
+			</div>
+			<c:if test="${cart.size() != 0 }">
+				<div class="row mt-3">
+					<h4 class="card-title" style="text-align: right">
+						Total: $
+						<c:out value="${total}" />
+					</h4>
+				</div>
+				<div class="row mt-3">
+					<form action="/cart/checkout">
+						<button type="submit" class="btn btn-success" style="float: right">Checkout</button>
+						<input type="hidden" name="total" value="${total}" /> <input
+							type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" />
+					</form>
+				</div>
+			</c:if>
 		</div>
 	</div>
 
-	<div class="container mt-3" style="height: 300px; overflow: auto">
-		<table class="table table-sm table-striped table-bordered">
-			<!-- here should go some titles... -->
-
-			<tr>
-
-			</tr>
-			<c:forEach items="${request.getSession().getAttribute('cart')}" var="product">
-				<tr>
-					<td><c:out value="${product.getId()}" /></td>
-					<td><c:out value="${product.getName()}" /></td>
-					<td><c:out value="${product.getPrice()}" /></td>
-					<td><c:out value="${product.getCategory()}" /></td>
-					<td><c:out value="${accessory.getDescription()}" /></td>
-					<td><form action="/cart/deleteItem">
-							<button type="submit" class="btn btn-danger">Remove</button>
-							<input type="hidden" name="productId" value="${product.getId()}" />
-						</form></td>
-				</tr>
-			</c:forEach>
-
-		</table>
-
+	<div class="container mt-3">
+		<div class="row mt-3"></div>
 	</div>
+
+
 
 
 

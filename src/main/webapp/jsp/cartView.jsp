@@ -30,7 +30,11 @@
 	rel="stylesheet" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-
+	 <style>
+      body{
+        background-color: aliceblue;
+      }
+    </style>
 
 </head>
 <body>
@@ -43,25 +47,18 @@
 	
 	
 	<div class="row" style="height: auto">
-		<div class="col-3"></div>
-		<div class="col-6">
-			<h1 >Cart</h1>	
-			<div class="card justify-content-center">
-				<div class="card-body justify-content-center">
-				<div class="row justify-content-center">
-					<h4 class="card-title" style="text-align:center">Your Order</h4>
-				</div>
-				<div class="row">
-					<%@ include file="cartTable.jsp"%>
-					This is some text within a card body.
-				</div>
-				
-				
-				
-				</div>
-			</div>
+		<div class="col"></div>
+		<div class="col-md">
+			<h1 >Order</h1>	
+			<c:if test="${checkingOut == null }">
+				<%@ include file="cartTable.jsp"%>
+			</c:if>
+			<c:if test="${checkingOut != null }">
+				<%@ include file="checkout.jsp"%>
+			</c:if>
+			
 		</div>
-		<div class="col-3"></div>
+		<div class="col"></div>
 	</div>
 
 

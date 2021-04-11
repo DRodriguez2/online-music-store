@@ -2,18 +2,14 @@ package com.HCL.Capstone.onlinemusicstore.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.HCL.Capstone.onlinemusicstore.entity.*;
+import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
-import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
-import com.HCL.Capstone.onlinemusicstore.exceptions.AccessoryNotFoundException;
-import com.HCL.Capstone.onlinemusicstore.exceptions.MusicNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
-import com.HCL.Capstone.onlinemusicstore.repository.*;
+import com.HCL.Capstone.onlinemusicstore.repository.AccessoryRepository;
 
 
 @Service

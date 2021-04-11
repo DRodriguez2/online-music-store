@@ -26,7 +26,6 @@ import com.HCL.Capstone.onlinemusicstore.entity.Instrument;
 import com.HCL.Capstone.onlinemusicstore.entity.Music;
 import com.HCL.Capstone.onlinemusicstore.entity.Services;
 import com.HCL.Capstone.onlinemusicstore.entity.Song;
-import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
 import com.HCL.Capstone.onlinemusicstore.exceptions.MusicNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.exceptions.NoAlbumsInDatabaseException;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
@@ -47,6 +46,7 @@ public class adminController {
 	
 	@Autowired private ProductService ps;
 	
+	@SuppressWarnings("unused")
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@RequestMapping("/admin")
@@ -100,7 +100,6 @@ public class adminController {
 			if(music.getType().toString().equals("SONG")) {
 				Song song = (Song) music;
 				List<Album> filteredAlbums = ms.getAllAlbums().stream().filter(a -> a.getName() != song.getAlbum().getName()).collect(Collectors.toList());
-				List<String> allAlbums = filteredAlbums.stream().map(a -> a.getName()).collect(Collectors.toList());
 				model.addAttribute("allAlbums", filteredAlbums);	
 				model.addAttribute("editSong", song);
 				model.addAttribute("editCategory", "song");

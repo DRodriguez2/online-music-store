@@ -86,7 +86,7 @@
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<input type="submit" value="Log In"/>
 				</form>
-				<div class="pt-2">${result} here</div>
+				<div class="pt-2">${result}</div>
             </li>
 
         </ul>

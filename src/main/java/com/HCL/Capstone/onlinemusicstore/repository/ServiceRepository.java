@@ -6,11 +6,8 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.HCL.Capstone.onlinemusicstore.entity.Music;
 import com.HCL.Capstone.onlinemusicstore.entity.Services;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
-import com.HCL.Capstone.onlinemusicstore.entity.enums.MusicType;
-import com.HCL.Capstone.onlinemusicstore.entity.enums.Platform;
 
 public interface ServiceRepository extends JpaRepository<Services, Long>{
 

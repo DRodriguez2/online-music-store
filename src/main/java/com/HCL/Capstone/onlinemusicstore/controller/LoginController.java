@@ -3,35 +3,29 @@ package com.HCL.Capstone.onlinemusicstore.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	//private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@GetMapping("/login")
-	public ModelAndView login(@PathVariable(value = "error", required = false) String error,
-			@PathVariable(value = "logout", required = false) String logout) {
+	@GetMapping()
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout) {
 
 		String result = "";
-		if (error != null) {
-			result = "<SPAN style='color:#F62020'>Invalid Login</SPAN>";
-			logger.info("INVALID LOGIN@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		}
-			
-		else if (logout != null)
-			result = "<SPAN style='color:#50F227'>Logout Successful</SPAN>";
+		if (error != null) result = "<SPAN style='color:#F62020'>Invalid Login</SPAN>";
+
+		else if (logout != null) result = "<SPAN style='color:#50F227'>Logout Successful</SPAN>";
 
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);
