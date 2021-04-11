@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +23,11 @@ public class AccessoryController {
 
 	@Autowired
 	private AccessoryService accessoryService;
+	
+	@RequestMapping("/accessory")
+	public String adminPage(Model model) {
+		return "accessory";
+	}
 	
 	@RequestMapping(value = "/DeleteAccessory", method = RequestMethod.POST)
 	public String deleteAccessory(ModelMap model,@RequestParam String name) throws ProductNotFoundException{

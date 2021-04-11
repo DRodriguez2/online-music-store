@@ -27,11 +27,11 @@
           background-color: aliceblue;
         }
       </style>
-
+<%@ include file = "navbar.jsp" %>
 </head>
 <body>
 
-  <%@ include file = "navbar.jsp" %>
+  
   
   <br><br>
   <p></p>

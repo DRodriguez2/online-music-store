@@ -26,13 +26,46 @@
         <li class="nav-item">
           <a class="nav-link" href="/services">Services</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/accessory">Accessories</a>
+        </li>
       </ul>
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
+  		<%boolean admin = false;
+  		boolean loggedIn = false;%>
+  		
+  		
+  		<%if(admin) 
+  		{%>
+  			<li class="nav-item active">
+			<a class="nav-link" href="/admin">Admin</a>
+			</li>
+  		<%}
+  		%>
+  		<%if(!loggedIn) 
+  		{%>
   			<li class="nav-item active">
       			<a class="nav-link" href="/login">Login</a>
     		</li>
+    		<li class="nav-item active">
+      			<a class="nav-link" href="/register">Register</a>
+    		</li>
+  			<%}
+  		%>
+  		<%if(loggedIn) 
+  		{%>
+    		<li class="nav-item active">
+      			<a class="nav-link" href="/account">My Account</a>
+    		</li>
+  			
+    		<li class="nav-item active">
+      			<a class="nav-link" href="/login/logout">Logout</a>
+    		</li>
+    		
+    	<%}
+  		%>
     		<li class="nav-item active">
       			<a class="nav-link" href="/cart">Cart</a>
       			

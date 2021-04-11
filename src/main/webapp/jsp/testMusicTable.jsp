@@ -10,27 +10,36 @@
 </head>
 <body>
 
-<div>
+<div  style="display: flex; justify-content: space-between; max-width: 300px; padding: 10px 0;">
 		<form action="/music/all" method="GET">
-			<button type="submit" class="btn btn-primary">get all music</button>
+			<button type="submit" class="btn btn-primary">All Music</button>
 		</form>
+
+		<form action="/music/songs/all" method="GET">
+			<button type="submit" class="btn btn-primary">Songs</button>
+		</form>
+
+		<form action="/music/albums" method="GET">
+			<button type="submit" class="btn btn-primary">Albums</button>
+		</form>
+		
 	</div>
 	<div>
 		<table class="table">
 			<!-- here should go some titles... -->
 			<tr>
-				<th>col1</th>
-				<th>col2</th>
-				<th>col3</th>
-				<th>col4</th>
-				<th>col5</th>
-				<th>col6</th>
-				<th>col7</th>
-				<th>col8</th>
-				<th>col9</th>
-				<th>col10</th>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Price</th>
+				<th>Platform</th>
+				<th>Type</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th> </th>
+				<th> </th>
 			</tr>
-			<c:forEach items="${searchResult}" var="music">
+			<c:forEach items="${searchResults}" var="music">
 				<tr>
 					<td><c:out value="${music.getId()}" /></td>
 					<td><c:out value="${music.getName()}" /></td>
@@ -40,6 +49,7 @@
 					<td><c:out value="${music.getType()}" /></td>
 					<td><c:out value="${music.getArtist()}" /></td>
 					<td><c:out value="${music.getGenre()}" /></td>
+
 					<td><form action="/cart/add" method="post">
 							<button type="submit" class="btn btn-primary">Select</button>
 							<input type="hidden" name="id" value="${music.getId()}" />
@@ -52,6 +62,7 @@
 							<input type="hidden" name="taskId" value="${music.getId()}" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 						</form>
+
 				</tr>
 			</c:forEach>
 		</table>
