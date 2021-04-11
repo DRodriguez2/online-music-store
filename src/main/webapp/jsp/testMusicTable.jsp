@@ -51,17 +51,12 @@
 					<td><c:out value="${music.getGenre()}" /></td>
 
 					<td><form action="/cart/add" method="post">
-							<button type="submit" class="btn btn-primary">Select</button>
+							<button type="submit" class="btn btn-primary">Add to Cart</button>
 							<input type="hidden" name="id" value="${music.getId()}" />
 							<input type="hidden" name="table" value="${searchResult}" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 							<input type="hidden" name="view" value="music" />
 						</form></td>
-					<td><form action="/home/deleteTask" method="POST">
-							<button type="submit" class="btn btn-primary">Delete</button>
-							<input type="hidden" name="taskId" value="${music.getId()}" />
-							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-						</form>
 
 				</tr>
 			</c:forEach>

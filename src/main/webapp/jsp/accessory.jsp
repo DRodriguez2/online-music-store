@@ -38,7 +38,7 @@
   <h2 class="text-center bg-info"> Need a new way to listen to your favorite hits?</h2>
   <p class="text-center bg-info"> We have you covered!</p>
     <p></p>
-  <img src= "/images/music3" width="500" height="300" style="width:50%;">
+  <img src= "/images/music3.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center"> We have many Accessories in our shop</p>
   <p class="text-center">You may search by typing what you are looking for</p>
 
