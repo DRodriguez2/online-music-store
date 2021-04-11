@@ -35,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				//.antMatchers("/**").permitAll()
-				.antMatchers("/h2-console/**").permitAll()
 				.antMatchers("/register").hasRole("ADMIN")
 				//.antMatchers("/admin").hasRole("ADMIN")
 				.antMatchers("/cart").hasAnyRole("USER", "ADMIN").and().formLogin()
@@ -58,10 +57,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-//	@Override
-//	public void configure(WebSecurity web) throws Exception {
-//		web.ignoring().antMatchers("/**");
-//	}
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/h2-console/**");
+	}
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
