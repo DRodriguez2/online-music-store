@@ -137,11 +137,12 @@ public class CartController {
 		else if(view.equals("music")) {
 			List<Music> musicResults = new ArrayList<>();
 			for(int i = 0; i < table.size(); i++) {
-				if(i % 4 == 0) {
+				if(i % 4 == 0) 
+				{
 					try {
 						musicResults.add(ms.getMusicById(Long.parseLong(table.get(i).split("=")[1])));
-					} catch (NumberFormatException | MusicNotFoundException e) {
-						// TODO Auto-generated catch block
+					} catch (NumberFormatException | MusicNotFoundException e) 
+					{
 						e.printStackTrace();
 					}
 				}		

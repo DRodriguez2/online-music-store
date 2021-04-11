@@ -41,6 +41,10 @@ public class User {
 		this.creditCard = creditCard; 
 	}
 	
+	public String getUN()  { 
+		return username;
+	}
+	
 
 	
 	

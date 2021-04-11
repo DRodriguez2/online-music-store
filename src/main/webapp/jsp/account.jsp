@@ -44,23 +44,8 @@
 
  <div class="container">
     <div class="row">
-    	<div class="col table-responsive" >
-    		<table class="table table-sm table-striped table-bordered" >
-			<!-- here should go some titles... -->
-
-			<tr>
-				<th>Username</th>
-				<th>Password</th>
-				<th>Credit Card</th>
-			</tr>
-			
-			
-			<tr>
-				<th><% request.getAttribute("user");%></th>
-
-			</tr>
-			
-		</table>
+    	<div>
+    		<%= request.getSession().getAttribute("user")%>
     	</div>
     </div>
       

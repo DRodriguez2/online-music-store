@@ -33,8 +33,11 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
-  		<%boolean admin = false;
-  		boolean loggedIn = false;%>
+  		<%
+  		boolean admin = false;
+  		boolean loggedIn = false;
+  		HttpServletRequest req;
+  		%>
   		
   		
   		<%if(admin) 
@@ -44,7 +47,7 @@
 			</li>
   		<%}
   		%>
-  		<%if(!loggedIn) 
+  		<%if(request.getSession().getAttribute("user") == null) 
   		{%>
   			<li class="nav-item active">
       			<a class="nav-link" href="/login">Login</a>
@@ -54,10 +57,10 @@
     		</li>
   			<%}
   		%>
-  		<%if(loggedIn) 
+  		<%if(request.getSession().getAttribute("user") != null) 
   		{%>
     		<li class="nav-item active">
-      			<a class="nav-link" href="/account">My Account</a>
+      			<a class="nav-link" href="/accountC">My Account</a>
     		</li>
   			
     		<li class="nav-item active">
