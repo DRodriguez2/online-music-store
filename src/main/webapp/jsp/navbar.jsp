@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="main-navigation">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/home2">Home</a>
+          <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="music">Music</a>
@@ -68,10 +68,7 @@
   		%>
     		<li class="nav-item active">
       			<a class="nav-link" href="/cart">Cart</a>
-      			
-      		<li class = "nav-item active"> 
-      			<a class = "nav-link" href="/register">Register</a>
-    		</li>
+      		</li>
   		</ul>
 	</div>
   </nav>

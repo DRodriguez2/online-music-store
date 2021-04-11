@@ -17,12 +17,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
 import com.HCL.Capstone.onlinemusicstore.entity.Instrument;
+import com.HCL.Capstone.onlinemusicstore.entity.Music;
 import com.HCL.Capstone.onlinemusicstore.entity.Product;
 import com.HCL.Capstone.onlinemusicstore.entity.Services;
 import com.HCL.Capstone.onlinemusicstore.entity.User;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
+import com.HCL.Capstone.onlinemusicstore.exceptions.MusicNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.service.AccessoryService;
 import com.HCL.Capstone.onlinemusicstore.service.InstrumentService;
+import com.HCL.Capstone.onlinemusicstore.service.MusicService;
 import com.HCL.Capstone.onlinemusicstore.service.ProductService;
 import com.HCL.Capstone.onlinemusicstore.service.ServicesService;
 
@@ -34,6 +37,7 @@ public class CartController {
 	@Autowired private InstrumentService is;
 	@Autowired private ServicesService ss;
 	@Autowired private AccessoryService as; 
+	@Autowired private MusicService ms; 
 	
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -129,7 +133,21 @@ public class CartController {
 				}		
 			}
 			model.addAttribute("instrumentResults", instrumentResults);
-		} else view = "theres a problem";
+		} 
+		else if(view.equals("music")) {
+			List<Music> musicResults = new ArrayList<>();
+			for(int i = 0; i < table.size(); i++) {
+				if(i % 4 == 0) {
+					try {
+						musicResults.add(ms.getMusicById(Long.parseLong(table.get(i).split("=")[1])));
+					} catch (NumberFormatException | MusicNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}		
+			}
+			model.addAttribute("musictResults", musicResults);
+		}else view = "theres a problem";
 		logger.info("@@@@@@@@@@@@@@@CART: " + req.getSession().getAttribute("cart"));
 		return view;
 	}
