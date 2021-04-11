@@ -41,7 +41,16 @@ public class User {
 		this.creditCard = creditCard; 
 	}
 	
-
+	public String getUN(){ 
+		return username;
+	}
+	public String getPass(){ 
+		return password;
+	}
+	
+	public int getCard(){ 
+		return creditCard;
+	}
 	
 	
 	@Override 

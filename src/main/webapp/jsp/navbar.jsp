@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="main-navigation">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/home2">Home</a>
+          <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="music">Music</a>
@@ -33,8 +33,9 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end">
   		<ul class="navbar-nav">
-  		<%boolean admin = false;
-  		boolean loggedIn = false;%>
+  		<%
+  		boolean admin = false;
+  		%>
   		
   		
   		<%if(admin) 
@@ -44,7 +45,7 @@
 			</li>
   		<%}
   		%>
-  		<%if(!loggedIn) 
+  		<%if(request.getSession().getAttribute("user") == null) 
   		{%>
   			<li class="nav-item active">
       			<a class="nav-link" href="/login">Login</a>
@@ -54,10 +55,10 @@
     		</li>
   			<%}
   		%>
-  		<%if(loggedIn) 
+  		<%if(request.getSession().getAttribute("user") != null) 
   		{%>
     		<li class="nav-item active">
-      			<a class="nav-link" href="/account">My Account</a>
+      			<a class="nav-link" href="/accountC">My Account</a>
     		</li>
   			
     		<li class="nav-item active">
@@ -68,10 +69,7 @@
   		%>
     		<li class="nav-item active">
       			<a class="nav-link" href="/cart">Cart</a>
-      			
-      		<li class = "nav-item active"> 
-      			<a class = "nav-link" href="/register">Register</a>
-    		</li>
+      		</li>
   		</ul>
 	</div>
   </nav>
