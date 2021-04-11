@@ -39,6 +39,7 @@
 
 </head>
 <body>
+<%@ include file="navbar.jsp"%>
     
       <p></p>
       <div class="container" style = "background-color: rgb(172, 172, 169);">

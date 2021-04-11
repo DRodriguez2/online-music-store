@@ -1,7 +1,9 @@
 package com.HCL.Capstone.onlinemusicstore.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -69,12 +71,19 @@ public class InstrumentController {
 		
 		nameResults = instrumentService.findAllByNameContainsIgnoreCase(search);
 		brandResults = instrumentService.findAllByBrandContainsIgnoreCase(search);
-		for(Instrument i : nameResults) {
-			results.add(i);
+	
+		Map<Long, Instrument> m1 = new HashMap<>();
+		for(int i = 0; i < nameResults.size(); i++) {
+			m1.put(nameResults.get(i).getId(), nameResults.get(i));
+			results.add(nameResults.get(i));
 		}
-		for(Instrument i : brandResults) {
-			results.add(i);
+		
+		for(int i = 0; i < brandResults.size(); i++) {
+			if(m1.get(brandResults.get(i).getId()) == null) {
+				results.add(brandResults.get(i));
+			}
 		}
+		
 		model.addAttribute("instrumentResults", results);
 		return "instrumentResults";
 	}
