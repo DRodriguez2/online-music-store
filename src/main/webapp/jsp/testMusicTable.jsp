@@ -51,13 +51,13 @@
 					<td><c:out value="${music.getGenre()}" /></td>
 
 					<td><form action="/cart/add" method="post">
-							<button type="submit" class="btn btn-primary">Select</button>
+							<button type="submit" class="btn btn-primary">Add to Cart</button>
 							<input type="hidden" name="id" value="${music.getId()}" />
 							<input type="hidden" name="table" value="${searchResult}" />
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 							<input type="hidden" name="view" value="music" />
-						</form>
-					</td>
+						</form></td>
+
 				</tr>
 			</c:forEach>
 		</table>
