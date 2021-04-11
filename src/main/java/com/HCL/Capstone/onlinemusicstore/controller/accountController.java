@@ -31,22 +31,12 @@ import com.HCL.Capstone.onlinemusicstore.service.ServicesService;
 @Controller
 @RequestMapping("/accountC")
 public class accountController {
-	
-	@Autowired private ProductService ps;
-	@Autowired private InstrumentService is;
-	@Autowired private ServicesService ss;
-	@Autowired private AccessoryService as; 
-	@Autowired private MusicService ms; 
-	
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+		
 	@GetMapping()
 	public String showAccount(HttpServletRequest req, Model model) {
 		
-		User us = (User) req.getSession().getAttribute("user");
 		
-		model.addAttribute("user", us);
+		
 
 		
 		return "account";

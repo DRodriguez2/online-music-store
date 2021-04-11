@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.HCL.Capstone.onlinemusicstore.entity.User"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -9,7 +11,7 @@
 <head>
 <%@ include file = "navbar.jsp" %>
 
-<title>Homepage</title>
+<title>Account Page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
@@ -37,15 +39,28 @@
 
 </head>
 <body>
-
-
-	<h1> Account Page </h1>
-
-
  <div class="container">
     <div class="row">
-    	<div>
-    		<%= request.getSession().getAttribute("user")%>
+    	<div class="col table-responsive" >
+    		<table class="table table-sm table-striped table-bordered" >
+			<!-- here should go some titles... -->
+
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Credit Card</th>
+			</tr>
+			
+			<%User std = (User) request.getSession().getAttribute("user");%>
+            <tr>
+                <td><%=std.getUN()%></td>
+                <td><%=std.getPass()%></td>
+                <td><%=std.getCard()%></td>
+            </tr>
+			
+			
+		</table>
+
     	</div>
     </div>
       

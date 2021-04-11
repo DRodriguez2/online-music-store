@@ -35,8 +35,6 @@
   		<ul class="navbar-nav">
   		<%
   		boolean admin = false;
-  		boolean loggedIn = false;
-  		HttpServletRequest req;
   		%>
   		
   		
