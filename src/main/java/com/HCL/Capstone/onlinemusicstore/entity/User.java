@@ -26,12 +26,11 @@ public class User {
 	//Multiple roles should be separated by a comma
 	@NotEmpty(message = "Value Required")
 	private String role; 
-	
-	
+
 	private long creditCard; 
 	
-	
 	public User(String username, String password, String role, long creditCard) { 
+
 		super(); 
 		this.username = username; 
 		this.password = password; 
