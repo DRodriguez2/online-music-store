@@ -81,10 +81,13 @@ public class CartController {
 	
 	@GetMapping("/checkout")
 	public String checkout(Model model, @RequestParam Double total, HttpServletRequest req) {
-		User user = (User)req.getSession().getAttribute("user");
+		if(req.getSession().getAttribute("user") != null) {
+			User user = (User)req.getSession().getAttribute("user");
+			model.addAttribute("cardnumber", user.getCreditCard());
+		}
+		
 		model.addAttribute("total", total);
-		model.addAttribute("checkingOut", "true");
-		model.addAttribute("cardnumber", user.getCreditCard());
+		model.addAttribute("checkingOut", "true");	
 		return "cartView";
 	}
 	

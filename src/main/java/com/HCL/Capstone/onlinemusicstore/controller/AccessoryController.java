@@ -1,7 +1,9 @@
 package com.HCL.Capstone.onlinemusicstore.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.HCL.Capstone.onlinemusicstore.entity.Accessory;
+import com.HCL.Capstone.onlinemusicstore.entity.Instrument;
 import com.HCL.Capstone.onlinemusicstore.entity.enums.Category;
 import com.HCL.Capstone.onlinemusicstore.exceptions.ProductNotFoundException;
 import com.HCL.Capstone.onlinemusicstore.service.AccessoryService;
@@ -70,11 +73,16 @@ public class AccessoryController {
 		
 		nameResults = accessoryService.findAllByNameContainsIgnoreCase(search);
 		brandResults = accessoryService.findAllByBrandContainsIgnoreCase(search);
-		for(Accessory i : nameResults) {
-			results.add(i);
+		Map<Long, Accessory> a1 = new HashMap<>();
+		for(int i = 0; i < nameResults.size(); i++) {
+			a1.put(nameResults.get(i).getId(), nameResults.get(i));
+			results.add(nameResults.get(i));
 		}
-		for(Accessory i : brandResults) {
-			results.add(i);
+		
+		for(int i = 0; i < brandResults.size(); i++) {
+			if(a1.get(brandResults.get(i).getId()) == null) {
+				results.add(brandResults.get(i));
+			}
 		}
 		model.addAttribute("accessoryResults", results);
 		return "accessoryResults";

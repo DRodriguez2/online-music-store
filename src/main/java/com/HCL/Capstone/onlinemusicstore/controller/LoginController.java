@@ -1,5 +1,7 @@
 package com.HCL.Capstone.onlinemusicstore.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,12 +22,15 @@ public class LoginController {
 	
 	@GetMapping()
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout) {
+			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest req) {
 
 		String result = "";
 		if (error != null) result = "<SPAN style='color:#F62020'>Invalid Login</SPAN>";
 
-		else if (logout != null) result = "<SPAN style='color:#50F227'>Logout Successful</SPAN>";
+		else if (logout != null) {
+			req.getSession().setAttribute("cart", new ArrayList<>());
+			result = "<SPAN style='color:#50F227'>Logout Successful</SPAN>";
+		}
 
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);
