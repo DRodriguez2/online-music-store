@@ -99,10 +99,6 @@
 
 
 
-
-	<!-- Footer -->
-	<footer class="page-footer font-small indigo"> </footer>
-	<!-- Footer -->
-
+	<%@ include file = "footer.jsp" %>
 </body>
 </html>

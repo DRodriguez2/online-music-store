@@ -65,15 +65,7 @@
 			</c:forEach>
 		</table>
 	</div>
-<!-- Footer -->
-	<footer class="page-footer font-small indigo">
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. � 2018 Copyright
-        </div>
-        <!-- Copyright -->
-    
-      </footer>
-	<!-- Footer -->
+	
+	<%@ include file = "footer.jsp" %>
 </body>
 </html>

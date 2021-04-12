@@ -70,8 +70,8 @@
         <ul class="list-group">
             <li class="list-group-item">
                 <h3>Login</h3>
-                <p>Our online store is happy to serve you</p>
-                <p>Insert a username and password</p>
+                <p>Our online store is happy to serve you.</p>
+                <p>Insert a username and password.</p>
                 <p>-OR-</p>
                 <p>Register now to begin online shopping!</p>
             </li>
@@ -84,7 +84,7 @@
    					User name: <input type="text" name="username" id="username" placeholder="username" required> <br><br>
     				Password: <input type="password" name="password" id="password" placeholder="password" required> <br><br>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-					<input type="submit" value="Log In"/>
+					<input class="btn btn-primary btn-sm" type="submit" value="Log In"/>
 				</form>
 				<div class="pt-2">${result}</div>
             </li>
@@ -93,6 +93,9 @@
       </div>
     </div>
   </div>
+ 
+ <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. © 2021 Copyright
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
