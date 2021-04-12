@@ -105,7 +105,7 @@
     			<br>
 				<h2>Enter Credit Card Information</h2>   
 				<br>
-				Enter Credit Card Number: <input type="number" name="credit" id="credit" placeholder="#XXXX-XXXX-XXXX-XXXX"> <br> <br>
+				Enter Credit Card Number: <input type="number" name="credit" id="credit" placeholder="#XXXXXXXXXXXXXXXX"> <br> <br>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<input class="btn btn-primary btn-sm" type="submit" value="Submit Information" onclick="return same()">
 
