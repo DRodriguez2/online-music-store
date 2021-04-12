@@ -39,7 +39,10 @@
 
 </head>
 <body>
-<%@ include file="navbar.jsp"%>
+
+
+	<%@ include file = "navbar.jsp" %>
+
     
       <p></p>
       <div class="container" style = "background-color: rgb(172, 172, 169);">
@@ -104,7 +107,8 @@
 				<br>
 				Enter Credit Card Number: <input type="number" name="credit" id="credit" placeholder="#XXXX-XXXX-XXXX-XXXX"> <br> <br>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-				<input type="submit" value="Submit Information" onclick="return same()"/>
+				<input class="btn btn-primary btn-sm" type="submit" value="Submit Information" onclick="return same()">
+
 				</form>
          
             </li>
@@ -113,6 +117,9 @@
       </div>
     </div>
   </div>
+
+
+<%@ include file = "footer.jsp" %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

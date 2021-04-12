@@ -35,7 +35,7 @@
   
   <br><br>
   <p></p>
-  <h2 class="text-center bg-info"> Want to see all the instruments we have?</h2>
+  <h2 class="text-center bg-info display-3"> Want to see all the instruments we have?</h2>
 
   <img src= "/images/piano.jpg" width="500" height="300" style="width:50%;">
   <p class="text-center"> We have many Instruments in our shop</p>
@@ -50,7 +50,7 @@
                 <form action="SearchInstrument" class="text-center" method="POST">
                     <input type="text" placeholder="Search by name or brand" name="search">
                     <br><br>
-                    <input type="submit" value="Submit">
+                    <input class="btn btn-primary" type="submit" value="Submit">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     
                     </form>
@@ -69,7 +69,7 @@
             <li class="list-group-item">
                 <h3 class="text-center">Click and view all that we have in stock</h3>
                 <form id="ViewInstrument" action="ViewInstrument" class="text-center" method="GET">
-                    <button >View all of our Wonderful Instruments</button>
+                    <button class="btn btn-primary">View all of our Wonderful Instruments</button>
                 </form>
             </li>
         </ul>
@@ -79,16 +79,7 @@
 <p></p>
 
 
-	<!-- Footer -->
-	<footer class="page-footer font-small indigo">
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. � 2018 Copyright
-        </div>
-        <!-- Copyright -->
-    
-      </footer>
-	<!-- Footer -->
+	<%@ include file = "footer.jsp" %>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

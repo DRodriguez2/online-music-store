@@ -31,8 +31,8 @@
 </head>
 <body>
 
-  <h1>Music Store</h1>
-	<p>The Music Store built for music lovers like us</p>
+  <h1 class= "text-center display-2">Music Store</h1>
+	<p class="text-center display-4">Built for Music Lovers</p>
   <div class="container">
     <div class="row">
       <div class="col" style = "background-color: rgb(233, 233, 168);">
@@ -85,16 +85,19 @@
 </div>
 <div class="col" style = "background-color: rgb(233, 233, 168);">
 
- <h1>Welcome to Music Store!</h1>
- <p>We have a selection of items far and wide here</p>
+ <h1 class="text-center">Welcome to Music Store!</h1>
+ <p = class="text-center">We have a selection of items far and wide here</p>
 </div>
 </div>
 </div>
 
-  <p></p>
+  <br> 
 
-  <img src= "/images/music band.jpg" width="500" height="300" style="width:50%;">
-  <p class="text-center bg-info"> Carrying Instruments for your Band or Hobby</p>
+  <div class="text-center">
+  <img src="images/music band.jpg" class="rounded mx-auto d-block img-fluid" alt="Band picture">
+	</div>
+	<br>
+  <p class="text-center bg-info display-6"> Carrying Instruments for your Band or Hobby</p>
   <div class="container">
     <div class="row">
       <div class="col">
@@ -116,8 +119,10 @@
 
   <p></p>
 
-  <img src= "/images/musiclessons.jpg" width="500" height="300" style="width:50%;">
-  <p class="text-center bg-info"> We provide services and classes</p>
+   <div class="text-center">
+  <img src="images/musiclessons.jpg" class="" alt="Music Lessons">
+	</div>
+  <p class="text-center bg-info display-6"> We provide services and classes</p>
   <div class="container">
     <div class="row">
       <div class="col">
@@ -135,9 +140,11 @@
     </div>
   </div>
 
-  <p></p>
-  <img src= "images/musicalbums.jpg" width="500" height="300" style="width:50%;">
-  <p class="text-center bg-info"> We have modern and classics available</p>
+  <br></br> 
+  <div class="text-center"> 
+  <img src= "images/musicalbums.jpg" class="rounded mx-auto d-block img-fluid" alt="Albums">
+  </div>
+  <p class="text-center bg-info display-6"> We have modern and classics available</p>
   <div class="container">
     <div class="row">
       <div class="col">
@@ -159,16 +166,7 @@
     </div>
   </div>
 
-	<!-- Footer -->
-	<footer class="page-footer font-small indigo">
-    
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. © 2018 Copyright
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-	<!-- Footer -->
+	<%@ include file = "footer.jsp" %>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

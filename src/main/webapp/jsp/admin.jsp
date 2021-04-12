@@ -151,7 +151,7 @@
 		<div class="col-2"></div>
 	</div>
 
-
+<%@ include file = "footer.jsp" %>
 </body>
 
 

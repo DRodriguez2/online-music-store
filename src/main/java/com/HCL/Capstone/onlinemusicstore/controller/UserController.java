@@ -25,7 +25,7 @@ public class UserController {
 		newU.setCreditCard(credit);
 		userSer.createUser(newU);
 		
-		return "login";
+		return "register";
 
 	}
 	

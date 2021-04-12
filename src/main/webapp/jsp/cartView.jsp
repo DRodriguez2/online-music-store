@@ -61,7 +61,7 @@
 		<div class="col"></div>
 	</div>
 
-
+<%@ include file = "footer.jsp" %>
 
 </body>
 

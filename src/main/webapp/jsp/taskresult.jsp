@@ -38,16 +38,7 @@
 <h4>You may perform a new task or return home</h4>
 
   
-	<!-- Footer -->
-	<footer class="page-footer font-small indigo">
-    
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Music Store 1234 Broadway St., San Antonio TX. © 2018 Copyright
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-	<!-- Footer -->
+	<%@ include file = "footer.jsp" %>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
