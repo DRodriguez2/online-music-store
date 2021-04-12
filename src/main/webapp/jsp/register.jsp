@@ -35,6 +35,11 @@
           return false;
       };
   }
+  
+  function success() 
+  {
+	  var result; 
+  }
   </script>
 
 </head>

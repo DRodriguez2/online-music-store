@@ -28,19 +28,21 @@ public class User {
 	private String role; 
 	
 	
-	private Integer creditCard; 
+	private long creditCard; 
 	
 	
-	public User() {};
-	
-	public User(String username, String password, String role, Integer creditCard) { 
+	public User(String username, String password, String role, long creditCard) { 
 		super(); 
 		this.username = username; 
 		this.password = password; 
 		this.role = role; 
 		this.creditCard = creditCard; 
 	}
-	
+
+	public User() {
+		super();
+	}
+
 	public String getUN(){ 
 		return username;
 	}
@@ -48,7 +50,7 @@ public class User {
 		return password;
 	}
 	
-	public int getCard(){ 
+	public long getCard(){ 
 		return creditCard;
 	}
 	
