@@ -24,6 +24,8 @@
 		</form>
 		
 	</div>
+	
+	
 	<div>
 		<table class="table">
 			<!-- here should go some titles... -->

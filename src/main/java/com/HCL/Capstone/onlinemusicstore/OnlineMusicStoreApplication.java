@@ -58,6 +58,7 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 		Instrument i18 = new Instrument("Levante Bb Horn", Category.INSTRUMENT, 419.00, "Brass", "Levante");
 		Instrument i19 = new Instrument("Yamaha Euphonium", Category.INSTRUMENT, 299.00, "Brass", "Yamaha");
 		Instrument i20 = new Instrument("Monoprice Metal Kazoo", Category.INSTRUMENT, 5.00, "Brass", "Monoprice");
+		Instrument i21 = new Instrument("Mayonnaise", Category.INSTRUMENT, 4.00, "Jar", "It's Just Mayonnaise");
 		instrumentRepo.save(i1);
 		instrumentRepo.save(i2);
 		instrumentRepo.save(i3);
@@ -78,6 +79,7 @@ public class OnlineMusicStoreApplication implements CommandLineRunner {
 		instrumentRepo.save(i18);
 		instrumentRepo.save(i19);
 		instrumentRepo.save(i20);
+		instrumentRepo.save(i21);
 
 		Services s1 = new Services("Repairs", Category.SERVICE, 49.99, "Instrument Repair");
 		Services s2 = new Services("Guitar Lessons", Category.SERVICE, 59.99, "Guitar Lessons for One Month");
