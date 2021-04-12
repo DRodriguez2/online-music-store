@@ -28,12 +28,12 @@ public class User {
 	private String role; 
 	
 	
-	private Integer creditCard; 
+	private String creditCard; 
 	
 	
 	public User() {};
 	
-	public User(String username, String password, String role, Integer creditCard) { 
+	public User(String username, String password, String role, String creditCard) { 
 		super(); 
 		this.username = username; 
 		this.password = password; 
@@ -48,7 +48,7 @@ public class User {
 		return password;
 	}
 	
-	public int getCard(){ 
+	public String getCard(){ 
 		return creditCard;
 	}
 	
