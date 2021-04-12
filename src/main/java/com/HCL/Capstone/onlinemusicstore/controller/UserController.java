@@ -16,9 +16,10 @@ public class UserController {
 	private UserService userSer; 
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String registerUser(@RequestParam String uname, @RequestParam String pass2, @RequestParam String credit) {
+
+	public String registerUser(@RequestParam String uname, @RequestParam String pass2, @RequestParam long credit) {
 		
-		User newU = new User(); 
+		User newU = new User();
 
 		newU.setUsername(uname);
 		newU.setPassword(pass2);
